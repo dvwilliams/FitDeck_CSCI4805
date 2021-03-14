@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FitDeck_CSCI4805.FinishSignupPage">
+    <StackLayout>
+        <Label Text="Name" Margin="5, 40, 0, 0"></Label>
+        <Entry x:Name="nameEntry" Placeholder="Name" />
+
+        <Label Text="Date of Birth" Margin=" 5, 30, 0, 0"></Label>
+        <Picker x:Name="monthDOBPicker" Title="Month" SelectedIndexChanged="monthDOBPicker_SelectedIndexChanged" >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32 }">
+                    <x:Int32>01</x:Int32>
+                    <x:Int32>02</x:Int32>
+                    <x:Int32>03</x:Int32>
+                    <x:Int32>04</x:Int32>
+                    <x:Int32>05</x:Int32>
+                    <x:Int32>06</x:Int32>
+                    <x:Int32>07</x:Int32>
+                    <x:Int32>08</x:Int32>
+                    <x:Int32>09</x:Int32>
+                    <x:Int32>10</x:Int32>
+                    <x:Int32>11</x:Int32>
+                    <x:Int32>12</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Picker x:Name="dayDOBPicker" Title="Day" />
+        <Entry x:Name="yearEntry" Placeholder="Year"/>
+
+        <Label Text="Weight" Margin="5, 30, 0 , 0"></Label>
+        <Entry x:Name="weightEntry" Placeholder="Weight" />
+
+        <Label Text="Height" Margin="5, 30, 0, 0"></Label>
+        <Picker x:Name="feetHeightPicker" Title="Ft" >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32}">
+                    <x:Int32>1</x:Int32>
+                    <x:Int32>2</x:Int32>
+                    <x:Int32>3</x:Int32>
+                    <x:Int32>4</x:Int32>
+                    <x:Int32>5</x:Int32>
+                    <x:Int32>6</x:Int32>
+                    <x:Int32>7</x:Int32>
+                    <x:Int32>8</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Picker x:Name="inchesHeightPicker" Title="In">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32}">
+                    <x:Int32>0</x:Int32>
+                    <x:Int32>1</x:Int32>
+                    <x:Int32>2</x:Int32>
+                    <x:Int32>3</x:Int32>
+                    <x:Int32>4</x:Int32>
+                    <x:Int32>5</x:Int32>
+                    <x:Int32>6</x:Int32>
+                    <x:Int32>7</x:Int32>
+                    <x:Int32>8</x:Int32>
+                    <x:Int32>9</x:Int32>
+                    <x:Int32>10</x:Int32>
+                    <x:Int32>11</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <ListView x:Name="userView"/>
+        <Button x:Name="finishAccountBtn" Text="Finish Creating Account" FontSize="20" Margin="60,40" BorderColor="CornflowerBlue" BorderWidth="2" Clicked="finishAccountBtn_Clicked"/>
+    
+        
+    </StackLayout>
+</ContentPage>
