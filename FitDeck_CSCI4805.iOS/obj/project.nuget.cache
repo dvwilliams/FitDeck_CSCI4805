@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "0ZDO6tMa1DZCjT5h/rQZ0Y2qNUH5hS4tk3m3JtFgeycUK9NZf1yuwJ+nqO2qTYNGoHURcWGE1v+2AbsAkgsunA==",
+  "success": true,
+  "projectFilePath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/FitDeck_CSCI4805.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/daphnewilliams/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/daphnewilliams/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/daphnewilliams/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}
