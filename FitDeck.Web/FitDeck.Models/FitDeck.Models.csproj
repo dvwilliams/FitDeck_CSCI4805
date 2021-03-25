@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Exercises\" />
+    <Folder Include="Workouts\" />
+    <Folder Include="Routines\" />
+  </ItemGroup>
 </Project>

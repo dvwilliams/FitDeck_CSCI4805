@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shane\\OneDrive\\Documents\\CSCI_Spring_2021\\CSCI_4805\\FitDeck\\FitDeck.Web\\FitDeck.Web\\FitDeck.Web.csproj": {}
+    "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Web/FitDeck.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shane\\OneDrive\\Documents\\CSCI_Spring_2021\\CSCI_4805\\FitDeck\\FitDeck.Web\\FitDeck.Web\\FitDeck.Web.csproj": {
+    "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Web/FitDeck.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shane\\OneDrive\\Documents\\CSCI_Spring_2021\\CSCI_4805\\FitDeck\\FitDeck.Web\\FitDeck.Web\\FitDeck.Web.csproj",
+        "projectUniqueName": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Web/FitDeck.Web.csproj",
         "projectName": "FitDeck.Web",
-        "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\CSCI_Spring_2021\\CSCI_4805\\FitDeck\\FitDeck.Web\\FitDeck.Web\\FitDeck.Web.csproj",
-        "packagesPath": "C:\\Users\\shane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shane\\OneDrive\\Documents\\CSCI_Spring_2021\\CSCI_4805\\FitDeck\\FitDeck.Web\\FitDeck.Web\\obj\\",
+        "projectPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Web/FitDeck.Web.csproj",
+        "packagesPath": "/Users/shanetrentham/.nuget/packages/",
+        "outputPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Web/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\shane\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/shanetrentham/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

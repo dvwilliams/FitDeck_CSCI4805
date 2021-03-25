@@ -173,3 +173,21 @@ AS
 	INNER JOIN PreDeterminedWorkouts pdw ON pdwE.WorkoutId = @WorkoutId
 	INNER JOIN Exercise ex ON pdwE.ExerciseId = ex.ExerciseId
 GO
+
+CREATE PROCEDURE GetUserByUserName
+	@UserName VARCHAR(50)
+AS
+	SELECT
+		*
+	FROM [dbo].[User] appUser
+	WHERE appUser.Username = @UserName
+GO
+
+CREATE PROCEDURE GetUserByUserId
+	@UserId INT
+AS
+	SELECT
+		*
+	FROM [dbo].[User] appUser
+	WHERE appUser.UserId = @UserId
+GO

@@ -1,0 +1,36 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{B153FD0E-AC0A-465E-90A3-29268C2DEB46}|Default">
+  <MonoDevelop.Ide.ItemProperties.FitDeck__CSCI4805.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3B8CC0E4-5B22-44EE-8460-AF06F3ECD505" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FitDeck_CSCI4805/User.cs">
+    <Files>
+      <File FileName="FitDeck_CSCI4805/FinishSignupPage.xaml" Line="18" Column="42" IsPinned="True" />
+      <File FileName="FitDeck_CSCI4805/FinishSignupPage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/MainPage.xaml" />
+      <File FileName="FitDeck_CSCI4805/MainPage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/SignupPage.xaml" Line="1" Column="40" />
+      <File FileName="FitDeck_CSCI4805/SignupPage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/User.cs" Line="32" Column="30" />
+      <File FileName="FitDeck_CSCI4805.iOS/Main.cs" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/App.xaml.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FitDeck_CSCI4805" expanded="True">
+            <Node name="FitDeck_CSCI4805" expanded="True">
+              <Node name="FinishSignupPage.xaml" expanded="True" />
+              <Node name="User.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

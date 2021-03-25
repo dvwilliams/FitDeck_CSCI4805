@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EGsZhPc/9l3ZiIx2mwFZ5PgW8+803FmzolqncjGp5wU37lLbVZSoqzt15YBukYrSeM0zT4O7w6xfdQjOVluZxQ==",
+  "dgSpecHash": "zZLHB4gAM+q/F20agi5YvnzQh4A9WjN24/FpahpNqPXZB8djLx2Od12AXUtKKf7Vmep+gQrOXc4XHJhJm8yyGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shane\\OneDrive\\Documents\\CSCI_Spring_2021\\CSCI_4805\\FitDeck\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj",
+  "projectFilePath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Models/FitDeck.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
