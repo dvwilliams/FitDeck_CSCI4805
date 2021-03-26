@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitDeck.Models.Workouts;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,6 +23,10 @@ namespace FitDeck.Models.Account
 
         //Date of birth
         public DateTime DOB { get; set; }
+        //List of User created workouts made by the user
+        public List<UserCreatedWorkout> UserCreatedWorkouts { get; set; }
+        //List of predetermined workouts saved by the user
+        public List<PreDeterminedWorkout> PreDeterminedWorkouts { get; set; }
 
         public string Token { get; set; }
     }
