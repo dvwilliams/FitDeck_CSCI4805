@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "N3uqb9IWzK6ySXy8eYFYvyLqEGuqpRjXQgmK/fvFG4PLTrJsSr2yMX87XzFipJPFPchneUQTNfSB2n1R4CAgDw==",
+  "success": true,
+  "projectFilePath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Services/FitDeck.Services.csproj",
+  "expectedPackageFiles": [
+    "/Users/shanetrentham/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.extensions.configuration/5.0.0/microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0/microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.10.0/microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.identitymodel.logging/6.10.0/microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.identitymodel.tokens/6.10.0/microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/system.identitymodel.tokens.jwt/6.10.0/system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

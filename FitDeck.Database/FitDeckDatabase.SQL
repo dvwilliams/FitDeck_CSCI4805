@@ -5,7 +5,7 @@ USE FitDeck;
 CREATE TABLE [User] (
 	UserId INT IDENTITY(1, 1) NOT NULL,
 	UserName VARCHAR(50) NOT NULL,
-	[Password] CHAR(60) NOT NULL,
+	[Password] NVARCHAR(60) NOT NULL,
 	EmailAddress VARCHAR(50) NOT NULL,
 	FirstName VARCHAR(50) NOT NULL,
 	LastName VARCHAR(50) NOT NULL,
@@ -190,4 +190,55 @@ AS
 		*
 	FROM [dbo].[User] appUser
 	WHERE appUser.UserId = @UserId
+GO
+
+CREATE PROCEDURE AddUser
+	@Account AccountType READONLY
+AS
+	INSERT INTO
+		[dbo].[User]
+		(
+			[UserName],
+			[Password],
+			[EmailAddress],
+			[FirstName],
+			[LastName],
+			[BirthDate],
+			[Height],
+			[Weight]
+		)
+		SELECT
+			[UserName],
+			[PasswordHash],
+			[Email],
+			[FirstName],
+			[LastName],
+			[BirthDate],
+			[Height],
+			[Weight]
+		FROM
+			@Account;
+		SELECT CAST(SCOPE_IDENTITY() AS INT);
+
+CREATE PROCEDURE AddExercise
+	@Exercise ExerciseType READONLY
+AS
+	INSERT INTO
+		[dbo].[Exercise](
+			[Title],
+			[MuscleGroup],
+			[WorkoutType],
+			[Sets],
+			[Reps]
+		)
+	SELECT
+		[Title],
+		[MuscleGroup],
+		[WorkoutType],
+		[Sets],
+		[Reps]
+	FROM
+		@Exercise
+	
+	SELECT CAST(SCOPE_IDENTITY() AS INT);
 GO

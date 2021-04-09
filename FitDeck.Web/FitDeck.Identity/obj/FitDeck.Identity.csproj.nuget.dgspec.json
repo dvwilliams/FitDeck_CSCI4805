@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Models/FitDeck.Models.csproj": {}
+    "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Identity/FitDeck.Identity.csproj": {}
   },
   "projects": {
-    "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Models/FitDeck.Models.csproj": {
+    "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Identity/FitDeck.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Models/FitDeck.Models.csproj",
-        "projectName": "FitDeck.Models",
-        "projectPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Models/FitDeck.Models.csproj",
+        "projectUniqueName": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Identity/FitDeck.Identity.csproj",
+        "projectName": "FitDeck.Identity",
+        "projectPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Identity/FitDeck.Identity.csproj",
         "packagesPath": "/Users/shanetrentham/.nuget/packages/",
-        "outputPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Models/obj/",
+        "outputPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck_CSCI4805/FitDeck.Web/FitDeck.Identity/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shanetrentham/.config/NuGet/NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
