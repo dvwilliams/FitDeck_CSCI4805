@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using FitDeck.Models.Exercises;
+using FitDeck.Models.Exercise;
 
 namespace FitDeck.Models.Workouts
 {
@@ -12,6 +12,6 @@ namespace FitDeck.Models.Workouts
 
         public string DayOfWeek { get; set; }
 
-        public List<Exercise> Exercises { get; set; }
+        public List<ExerciseObject> Exercises { get; set; }
     }
 }

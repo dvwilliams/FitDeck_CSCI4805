@@ -5,7 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
-using FitDeck.Models.Exercises;
+using FitDeck.Models.Exercise;
+using FitDeck.Repository.Exercise;
 using Microsoft.Extensions.Configuration;
 
 namespace FitDeck.Repository.Exercises
@@ -19,32 +20,33 @@ namespace FitDeck.Repository.Exercises
             _config = config;
         }
 
-        public async Task<FitDeck.Models.Exercises.Exercise> GetExerciseById(int exerciseId)
+        public async Task<ExerciseObject> GetExerciseById(int exerciseId)
         {
-            IEnumerable<FitDeck.Models.Exercises.Exercise> exercises;
+            ExerciseObject exercise;
 
             using (var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {
                 await connection.OpenAsync();
 
-                exercises = await connection.QueryAsync<FitDeck.Models.Exercises.Exercise> (
+                exercise = await connection.QueryFirstOrDefaultAsync<ExerciseObject> (
                     "GetExerciseById",
                     new { ExerciseId = exerciseId },
                     commandType: CommandType.StoredProcedure
                     );
             }
-            return exercises.ToList();
+
+            return exercise;
         }
 
-        public async Task<List<Exercise>> GetExerciseByMuscleGroup(string muscleGroup)
+        public async Task<List<ExerciseObject>> GetExerciseByMuscleGroup(string muscleGroup)
         {
-            IEnumerable<Exercise> exercises;
+            IEnumerable<ExerciseObject> exercises;
 
             using (var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {
                 await connection.OpenAsync();
 
-                exercises = await connection.QueryAsync<Exercise>(
+                exercises = await connection.QueryAsync<ExerciseObject>(
                     "GetExerciseByMuscleGroup",
                     new { MuscleGroup = muscleGroup },
                     commandType: CommandType.StoredProcedure
@@ -54,15 +56,15 @@ namespace FitDeck.Repository.Exercises
             return exercises.ToList();
         }
 
-        public async Task<List<Exercise>> GetExerciseByTitle(string title)
+        public async Task<List<ExerciseObject>> GetExerciseByTitle(string title)
         {
-            IEnumerable<Exercise> exercises;
+            IEnumerable<ExerciseObject> exercises;
 
             using (var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {
                 await connection.OpenAsync();
 
-                exercises = await connection.QueryAsync<Exercise>(
+                exercises = await connection.QueryAsync<ExerciseObject>(
                     "GetExerciseByTitle",
                     new { Title = title },
                     commandType: CommandType.StoredProcedure

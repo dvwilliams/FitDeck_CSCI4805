@@ -1,0 +1,15 @@
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.csprojAssemblyReference.cache
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.AssemblyInfoInputs.cache
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.AssemblyInfo.cs
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.csproj.CoreCompileInputs.cache
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\bin\Debug\net5.0\FitDeck.Repository.deps.json
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\bin\Debug\net5.0\FitDeck.Repository.dll
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\bin\Debug\net5.0\ref\FitDeck.Repository.dll
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\bin\Debug\net5.0\FitDeck.Repository.pdb
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\bin\Debug\net5.0\FitDeck.Models.dll
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\bin\Debug\net5.0\FitDeck.Models.pdb
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.csproj.CopyComplete
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.dll
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\ref\FitDeck.Repository.dll
+C:\Users\shane\OneDrive\Documents\CSCI_Spring_2021\CSCI_4805\FitDeck\FitDeck_CSCI4805\FitDeck.Web\FitDeck.Repository\obj\Debug\net5.0\FitDeck.Repository.pdb

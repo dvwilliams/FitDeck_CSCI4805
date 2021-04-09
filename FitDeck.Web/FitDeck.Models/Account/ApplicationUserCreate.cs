@@ -23,7 +23,7 @@ namespace FitDeck.Models.Account
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Height is required")]
-        public float Height { get; set; }
+        public int Height { get; set; }
 
         [Required(ErrorMessage = "Weight is required")]
         public int Weight { get; set; }

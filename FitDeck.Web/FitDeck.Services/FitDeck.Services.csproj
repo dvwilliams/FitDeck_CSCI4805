@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.10.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FitDeck.Models\FitDeck.Models.csproj" />
+  </ItemGroup>
 </Project>

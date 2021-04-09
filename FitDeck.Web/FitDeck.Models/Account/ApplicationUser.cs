@@ -16,6 +16,10 @@ namespace FitDeck.Models.Account
 
         public string LastName { get; set; }
 
+        public int Height { get; set; }
+
+        public int Weight { get; set; }
+
         public DateTime DateOfBirth { get; set; }
 
         public string Token { get; set; }

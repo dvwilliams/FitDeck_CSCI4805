@@ -1,7 +1,7 @@
 ﻿using System;
-namespace FitDeck.Models.Exercises
+namespace FitDeck.Models.Exercise
 {
-    public class Exercise
+    public class ExerciseObject
     {
         public int ExerciseId { get; set; }
 

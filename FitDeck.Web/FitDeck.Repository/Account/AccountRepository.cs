@@ -1,12 +1,15 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Threading;
-using System.Threading.Tasks;
-using Dapper;
+﻿using Dapper;
 using FitDeck.Models.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FitDeck.Repository.Account
 {
@@ -14,10 +17,11 @@ namespace FitDeck.Repository.Account
     {
         private readonly IConfiguration _config;
 
-        public AccountRepository(IConfiguration config)
+        public AccountRepository(IConfiguration configuration)
         {
-            _config = config;
+            _config = configuration;
         }
+
         public async Task<IdentityResult> CreateAsync(ApplicationUserIdentity user, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -65,7 +69,7 @@ namespace FitDeck.Repository.Account
 
             ApplicationUserIdentity applicationUser;
 
-            using(var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
+            using (var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {
                 await connection.OpenAsync();
 
