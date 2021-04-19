@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FitDeck_CSCI4805.CreateWorkoutPage">
+    <StackLayout BackgroundColor="White">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="muscleGroupLbl" Text="Muscle Group" TextColor="CornflowerBlue" FontSize="25"/>
+            <Label x:Name="exerciseTypeLbl" Text="Exercise Type" TextColor="CornflowerBlue" FontSize="25"/>
+            <Button x:Name="armsButton" Text="Arms" TextColor="CornflowerBlue" FontSize="20" Clicked="armsButton_Clicked"/>
+            <Button/>
+            <Button/>
+            <Button/>
+            <Button/>
+            <Button/>
+            <Button/>
+            <Button/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

@@ -27,7 +27,9 @@ namespace FitDeck_CSCI4805
 
             int feet = (int)feetHeightPicker.SelectedItem;
             int inches = (int)inchesHeightPicker.SelectedItem;
-            float height = feet + (inches / 100);
+            float ins = (float)inches / 100;
+            float height = feet + ins;
+            Math.Round(height, 2);
 
             if(nameEntry == null || monthDOBPicker== null || dayDOBPicker == null ||
                 yearEntry == null || weightEntry== null || feetHeightPicker == null || inchesHeightPicker == null)
@@ -39,12 +41,13 @@ namespace FitDeck_CSCI4805
                 User user = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
 
                 //Created to test whether the data was being stored or not
-                ObservableCollection<string> data = new ObservableCollection<string>();
-                data.Add(user.ToString());
-                userView.ItemsSource = data;
+                //ObservableCollection<string> data = new ObservableCollection<string>();
+                //data.Add(user.ToString());
+                //userView.ItemsSource = data;
 
                 //navigates to the next page in the app
-                //Navigation.PushAsync(new ProfileHomePage());
+                //paramater of user needed to test without the database
+                Navigation.PushAsync(new ProfileHomePage(user));
             }
         }
 

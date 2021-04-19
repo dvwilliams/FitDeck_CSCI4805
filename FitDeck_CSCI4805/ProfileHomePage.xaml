@@ -2,8 +2,63 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
     x:Class="FitDeck_CSCI4805.ProfileHomePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    <ScrollView BackgroundColor="CornflowerBlue">
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <!--Logout Button-->
+            <Button x:Name="logoutButton" Text="Logout" TextColor="White" FontSize="17" Grid.Column="2" Clicked="logoutButton_Clicked"/>
+
+            <!--View Profile Info-->
+            <Frame Padding="30, 30, 30, 0" BorderColor="CornflowerBlue" CornerRadius="10" Grid.ColumnSpan="3" Grid.Row="1">
+                 <Grid>
+                     <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="*" />
+                         <ColumnDefinition Width="*" />
+                         <ColumnDefinition Width="*" />
+                     </Grid.ColumnDefinitions>
+                     <Grid.RowDefinitions>
+                         <RowDefinition Height="Auto" />
+                         <RowDefinition Height="Auto" />
+                         <RowDefinition Height="Auto" />
+                         <RowDefinition Height="Auto" />
+
+                     </Grid.RowDefinitions>
+                     <Label x:Name="lblUsername" FontSize="20" HorizontalOptions="Center"  Grid.ColumnSpan="3" TextColor="Gray" Grid.Row="1" Grid.Column="0" Padding="0" Margin="0,0,0,20"/>
+                     <Label x:Name="lblName" FontSize="35" HorizontalOptions="Center"  Grid.ColumnSpan="3" TextColor="CornflowerBlue" Grid.Row="0" Grid.Column="0" Padding="0" />
+                     <Label x:Name="lblEmail" FontSize="20" HorizontalOptions="Center"  Grid.ColumnSpan="3" TextColor="Black" Grid.Row="2" Grid.Column="0" Padding="0" />
+                     <Label x:Name="lblAge" FontSize="20" HorizontalOptions="Center" TextColor="CornflowerBlue" Grid.Row="3" Grid.Column="0" />
+                     <Label x:Name="lblWeight" FontSize="20" HorizontalOptions="Center"  TextColor="CornflowerBlue" Grid.Row="3" Grid.Column="1"  />
+                     <Label x:Name="lblHeight" FontSize="20" HorizontalOptions="Center"  TextColor="CornflowerBlue" Grid.Row="3" Grid.Column="2" />
+                 </Grid>
+
+            </Frame>
+            <!--View Daily and Weekly Stats-->
+            <StackLayout Grid.Row="2" Grid.ColumnSpan="3">
+                <Label Text="Daily Stats:" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                <Label Text="Weekly Stats:" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+            <!--View Workouts List-->
+            <Button x:Name="addWorkoutButton" Text="Add Workout" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="0" Clicked="addWorkoutButton_Clicked"></Button>
+            <Button x:Name="editWorkoutButton" Text="Edit Workout" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="1" Clicked="editWorkoutButton_Clicked" ></Button>
+            <Button x:Name="addRestDayButton" Text="Add Rest Day" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="2" Clicked="addRestDayButton_Clicked"></Button>
+
+            <ListView Grid.Row="4" Grid.ColumnSpan="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                 
+        </Grid>
+    </ScrollView>
 </ContentPage>

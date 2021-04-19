@@ -1,31 +1,30 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{B153FD0E-AC0A-465E-90A3-29268C2DEB46}|Default">
-  <MonoDevelop.Ide.ItemProperties.FitDeck__CSCI4805.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.446F3D24-CE2A-4798-85FA-78858AA188D9" />
+  <MonoDevelop.Ide.ItemProperties.FitDeck__CSCI4805.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2FB3BE2A-36B3-44B1-B78A-D445CF65991E" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="FitDeck_CSCI4805/FinishSignupPage.xaml" Line="18" Column="42" IsPinned="True" />
-      <File FileName="FitDeck_CSCI4805/FinishSignupPage.xaml.cs" Line="46" Column="56" />
-      <File FileName="FitDeck_CSCI4805/MainPage.xaml" Line="15" Column="1" />
-      <File FileName="FitDeck_CSCI4805/MainPage.xaml.cs" Line="25" Column="39" />
-      <File FileName="FitDeck_CSCI4805/SignupPage.xaml" Line="1" Column="40" />
-      <File FileName="FitDeck_CSCI4805/SignupPage.xaml.cs" Line="19" Column="74" />
-      <File FileName="FitDeck_CSCI4805/User.cs" Line="32" Column="30" />
-      <File FileName="FitDeck_CSCI4805.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" Line="1" Column="1" />
-      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="FitDeck_CSCI4805/LoginPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/Exercise.cs" />
+      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml" />
+      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/PreselectedWorkoutPage.xaml" />
+      <File FileName="FitDeck_CSCI4805/PreselectedWorkoutPage.xaml.cs" />
+      <File FileName="FitDeck_CSCI4805/SignupPage.xaml.cs" Line="25" Column="17" />
+      <File FileName="FitDeck_CSCI4805/SignupPage.xaml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FitDeck_CSCI4805" expanded="True">
             <Node name="FitDeck_CSCI4805" expanded="True">
-              <Node name="FinishSignupPage.xaml" expanded="True">
-                <Node name="FinishSignupPage.xaml.cs" selected="True" />
+              <Node name="CreateWorkoutPage.xaml" expanded="True" />
+              <Node name="PreselectedWorkoutPage.xaml" expanded="True" />
+              <Node name="ProfileHomePage.xaml" expanded="True">
+                <Node name="ProfileHomePage.xaml.cs" selected="True" />
               </Node>
-              <Node name="MainPage.xaml" expanded="True" />
-              <Node name="ProfileHomePage.xaml" expanded="True" />
               <Node name="SignupPage.xaml" expanded="True" />
             </Node>
-            <Node name="FitDeck_CSCI4805.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -33,6 +32,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <Debugger.DebugSourceFolders />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

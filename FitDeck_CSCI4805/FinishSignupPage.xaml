@@ -4,9 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FitDeck_CSCI4805.FinishSignupPage">
     <StackLayout>
-        <Label Text="Name" Margin="5, 40, 0, 0"></Label>
-        <Entry x:Name="nameEntry" Placeholder="Name" />
 
+        <!--user entry for their name-->
+        <Label Text="Name" Margin="5, 40, 0, 0"></Label>
+        <Entry x:Name="nameEntry" Placeholder="Name" Keyboard="Default"/>
+
+        <!--user entry for their birthday-->
         <Label Text="Date of Birth" Margin=" 5, 30, 0, 0"></Label>
         <Picker x:Name="monthDOBPicker" Title="Month" SelectedIndexChanged="monthDOBPicker_SelectedIndexChanged" >
             <Picker.ItemsSource>
@@ -27,11 +30,13 @@
             </Picker.ItemsSource>
         </Picker>
         <Picker x:Name="dayDOBPicker" Title="Day" />
-        <Entry x:Name="yearEntry" Placeholder="Year"/>
+        <Entry x:Name="yearEntry" Placeholder="Year" Keyboard="Numeric"/>
 
+        <!--user entry for their weight in pounds-->
         <Label Text="Weight" Margin="5, 30, 0 , 0"></Label>
-        <Entry x:Name="weightEntry" Placeholder="Weight" />
+        <Entry x:Name="weightEntry" Placeholder="Weight" Keyboard="Numeric"/>
 
+        <!--user entry for their height in feet, inches-->
         <Label Text="Height" Margin="5, 30, 0, 0"></Label>
         <Picker x:Name="feetHeightPicker" Title="Ft" >
             <Picker.ItemsSource>
@@ -65,7 +70,10 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+
+        <!--user view is just for test/debugging, will be deleted eventually-->
         <ListView x:Name="userView"/>
+
         <Button x:Name="finishAccountBtn" Text="Finish Creating Account" FontSize="20" Margin="60,40" BorderColor="CornflowerBlue" BorderWidth="2" Clicked="finishAccountBtn_Clicked"/>
     
         
