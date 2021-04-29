@@ -19,35 +19,43 @@ namespace FitDeck_CSCI4805
         }
         void finishAccountBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-            int month = (int)monthDOBPicker.SelectedItem;
-            int day = (int)dayDOBPicker.SelectedItem;
-            int year = Int32.Parse(yearEntry.Text);
-            DateTime dOB = new DateTime(year, month, day);
-            
-
-            int feet = (int)feetHeightPicker.SelectedItem;
-            int inches = (int)inchesHeightPicker.SelectedItem;
-            float ins = (float)inches / 100;
-            float height = feet + ins;
-            Math.Round(height, 2);
-
-            if(nameEntry == null || monthDOBPicker== null || dayDOBPicker == null ||
-                yearEntry == null || weightEntry== null || feetHeightPicker == null || inchesHeightPicker == null)
+            if (nameEntry == null || monthDOBPicker.SelectedIndex == -1 || dayDOBPicker.SelectedIndex == -1 ||
+                yearEntry == null || weightEntry == null || feetHeightPicker.SelectedIndex == -1 || inchesHeightPicker.SelectedIndex == -1)
             {
                 DisplayAlert("Error:", "All boxes must have valid entries.", "OK");
+
             }
             else
             {
-                User user = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
+                int parseYear = int.Parse(yearEntry.Text);
+                if (parseYear >= 2022 || parseYear <= 1849)
+                {
+                    DisplayAlert("Error:", "Please Enter a valid year.", "OK");
+                }
+                else
+                {
+                    int month = (int)monthDOBPicker.SelectedItem;
+                    int day = (int)dayDOBPicker.SelectedItem;
+                    int year = Int32.Parse(yearEntry.Text);
+                    DateTime dOB = new DateTime(year, month, day);
 
-                //Created to test whether the data was being stored or not
-                //ObservableCollection<string> data = new ObservableCollection<string>();
-                //data.Add(user.ToString());
-                //userView.ItemsSource = data;
 
-                //navigates to the next page in the app
-                //paramater of user needed to test without the database
-                Navigation.PushAsync(new ProfileHomePage(user));
+                    int feet = (int)feetHeightPicker.SelectedItem;
+                    int inches = (int)inchesHeightPicker.SelectedItem;
+                    float ins = (float)inches / 100;
+                    float height = feet + ins;
+                    Math.Round(height, 2);
+                    User user = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
+
+                    //Created to test whether the data was being stored or not
+                    //ObservableCollection<string> data = new ObservableCollection<string>();
+                    //data.Add(user.ToString());
+                    //userView.ItemsSource = data;
+
+                    //navigates to the next page in the app
+                    //paramater of user needed to test without the database
+                    Navigation.PushAsync(new ProfileHomePage(user));
+                }
             }
         }
 

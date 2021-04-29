@@ -32,6 +32,7 @@ namespace FitDeck_CSCI4805
 
         async void addWorkoutButton_Clicked(System.Object sender, System.EventArgs e)
         {
+
             string answer = await DisplayActionSheet("Add Workout", "Cancel", "Create Custom Workout", "Add Preselected Workout");
             Debug.WriteLine("Action: " + answer);
 

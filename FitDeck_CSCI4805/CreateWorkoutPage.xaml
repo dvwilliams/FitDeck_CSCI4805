@@ -3,27 +3,91 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FitDeck_CSCI4805.CreateWorkoutPage">
-    <StackLayout BackgroundColor="White">
+    <ScrollView BackgroundColor="White">
 
-        <Grid>
+        <Grid Padding="20">
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+
             </Grid.ColumnDefinitions>
-            <Label x:Name="muscleGroupLbl" Text="Muscle Group" TextColor="CornflowerBlue" FontSize="25"/>
-            <Label x:Name="exerciseTypeLbl" Text="Exercise Type" TextColor="CornflowerBlue" FontSize="25"/>
-            <Button x:Name="armsButton" Text="Arms" TextColor="CornflowerBlue" FontSize="20" Clicked="armsButton_Clicked"/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
-            <Button/>
+            <Label x:Name="muscleGroupLbl" Text="Muscle Group" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0" Grid.Column="0"/>
+            <Label x:Name="exerciseTypeLbl" Text="Exercise Type" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0" Grid.Column="1"/>
+
+            <Picker x:Name="muscleGroupPicker" Title="Muscle Group" SelectedIndexChanged="muscleGroupPicker_SelectedIndexChanged" Grid.Row="1" Grid.Column="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Upper Arms</x:String>
+                        <x:String>ForeArms</x:String>
+                        <x:String>Shoulders</x:String>
+                        <x:String>Hips</x:String>
+                        <x:String>Chest</x:String>
+                        <x:String>Back</x:String>
+                        <x:String>Waist</x:String>
+                        <x:String>Neck</x:String>
+                        <x:String>Thighs</x:String>
+                        <x:String>Calves</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="concentratedMuscleGroupPicker" Title="Specific Muscle Group" Grid.Row="2" Grid.Column="0"/>
+
+            <Picker x:Name="apparatusPicker" Title="Apparatus" Grid.Row="3" Grid.Column="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Band Resistive</x:String>
+                        <x:String>BarBell</x:String>
+                        <x:String>Bodyweight</x:String>
+                        <x:String>Cable</x:String>
+                        <x:String>Dumbbell</x:String>
+                        <x:String>Kettlebell</x:String>
+                        <x:String>Lever</x:String>
+                        <x:String>Machine</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button x:Name="findExercisesButton" Text="Find Exercises" TextColor="White" BackgroundColor="CornflowerBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Clicked="findExercisesButton_Clicked"/>
+
+            <ListView x:Name="layout" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5">
+               <ListView.ItemTemplate>
+                   <DataTemplate>
+                       <ViewCell>
+                           <StackLayout>
+                               <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"/>
+                                    <Label x:Name="exName" Text="{Binding Exercise_Name}" Grid.Column="1" Grid.Row="0" TextColor="CornflowerBlue" Grid.ColumnSpan="2" />
+
+                               </Grid>
+                               
+                            </StackLayout>
+                            
+                       </ViewCell>
+                   </DataTemplate>
+               </ListView.ItemTemplate>
+           </ListView>
         </Grid>
-    </StackLayout>
+    </ScrollView>
 </ContentPage>

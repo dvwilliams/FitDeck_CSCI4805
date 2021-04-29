@@ -15,6 +15,10 @@ namespace FitDeck_CSCI4805
         private string notes;
         public string Notes { set { notes = value; } get { return notes; } }
 
+        public Exercise()
+        {
+
+        }
         public Exercise(string name, string type, string muscleGroup, string notes)
         {
             this.name = name;
