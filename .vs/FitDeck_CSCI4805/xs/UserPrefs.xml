@@ -2,27 +2,30 @@
   <MonoDevelop.Ide.ItemProperties.FitDeck__CSCI4805.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.28D98A18-C72F-4F7E-AE4C-ADB231649733" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" Line="1" Column="1" />
-      <File FileName="FitDeck_CSCI4805/Exercise.cs" Line="1" Column="1" />
-      <File FileName="FitDeck_CSCI4805/ExRxDatabase.cs" Line="7" Column="29" />
-      <File FileName="FitDeck_CSCI4805/ExerciseResponseModel.cs" Line="15" Column="54" />
-      <File FileName="FitDeck_CSCI4805/ExRxDatabseResponseModel.cs" Line="6" Column="58" />
-      <File FileName="FitDeck_CSCI4805/RestService.cs" Line="81" Column="1" />
-      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" Line="1" Column="1" />
-      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml.cs" Line="122" Column="143" />
-      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml" Line="81" Column="165" />
-      <File FileName="FitDeck_CSCI4805/FinishSignupPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml" Line="130" Column="49" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" Line="68" Column="65" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" Line="67" Column="59" />
+      <File FileName="FitDeck_CSCI4805/RestService.cs" Line="154" Column="1" />
+      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml.cs" Line="24" Column="9" />
+      <File FileName="FitDeck_CSCI4805/PreselectedWorkoutPage.xaml.cs" Line="108" Column="36" />
+      <File FileName="FitDeck_CSCI4805/PreselectedWorkoutPage.xaml" Line="115" Column="32" />
+      <File FileName="FitDeck_CSCI4805/PreselectedWorkout.cs" Line="233" Column="1" />
+      <File FileName="FitDeck_CSCI4805/RestDay.cs" Line="12" Column="34" />
+      <File FileName="FitDeck_CSCI4805/RestDays.cs" Line="8" Column="14" />
+      <File FileName="FitDeck_CSCI4805/ExerciseResponseModel.cs" Line="1" Column="1" />
+      <File FileName="FitDeck_CSCI4805/Workout.cs" Line="98" Column="48" />
+      <File FileName="FitDeck_CSCI4805/Workouts.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FitDeck_CSCI4805" expanded="True">
             <Node name="FitDeck_CSCI4805" expanded="True">
-              <Node name="CreateWorkoutPage.xaml" expanded="True" selected="True" />
-              <Node name="FinishSignupPage.xaml" expanded="True" />
+              <Node name="CreateWorkoutPage.xaml" expanded="True" />
+              <Node name="PreselectedWorkoutPage.xaml" expanded="True" />
               <Node name="ProfileHomePage.xaml" expanded="True" />
+              <Node name="Workouts.cs" selected="True" />
             </Node>
-            <Node name="FitDeck_CSCI4805.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>

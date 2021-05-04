@@ -6,6 +6,9 @@ namespace FitDeck_CSCI4805
         private string name;
         public string Name { get { return name; } }
 
+        private int id;
+        public int ID { get { return id; } }
+
         private string type;
         public string Type { get { return type; } }
             
@@ -19,12 +22,15 @@ namespace FitDeck_CSCI4805
         {
 
         }
-        public Exercise(string name, string type, string muscleGroup, string notes)
+        public Exercise(string name, int id, string type, string muscleGroup)
         {
             this.name = name;
+            this.id = id;
             this.type = type;
             this.muscleGroup = muscleGroup;
-            this.notes = notes;
+            this.notes = "";
         }
+
+        
     }
 }

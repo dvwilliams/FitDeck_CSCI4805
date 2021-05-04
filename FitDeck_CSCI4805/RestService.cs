@@ -70,7 +70,7 @@ namespace FitDeck_CSCI4805
         }
 
         //Method responsible for obtaining the list of weight training exercises given from the Api that match the credentials given
-        public static async Task<ExerciseResponseModel> Exercises(string apparatus, string muscleGroup, string token)
+        public static async Task<ExerciseResponseModel> weightExercises(string apparatus, string muscleGroup, string token)
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
@@ -78,12 +78,100 @@ namespace FitDeck_CSCI4805
 
             string response = await client.GetStringAsync(url);
 
-            var app = JsonConvert.DeserializeObject<ExerciseResponseModel>(response);
+            try
+            {
+                var app = JsonConvert.DeserializeObject<ExerciseResponseModel>(response);
+                return app;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            } 
 
-            return app;
-            
-            
+        }
 
+        //Method responsible for obtaining the list of plyometric exercises given from the Api that match the credentials given
+        public static async Task<ExerciseResponseModel> plyoExercises(string movement, string intensity, string token)
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = $"/exrxapi/v1/allinclusive/exercises?movement={movement}&intensity={intensity}";
+
+            string response = await client.GetStringAsync(url);
+
+            try
+            {
+                var app = JsonConvert.DeserializeObject<ExerciseResponseModel>(response);
+                return app;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+
+        }
+        //Method responsible for obtaining the list of stretch exercises given from the Api that match the credentials given
+        public static async Task<ExerciseResponseModel> stretchExercises(string bodypart, string token)
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = $"/exrxapi/v1/allinclusive/exercises?stretch&bodypart={bodypart}";
+
+            string response = await client.GetStringAsync(url);
+
+            try
+            {
+                var app = JsonConvert.DeserializeObject<ExerciseResponseModel>(response);
+                return app;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        //Method responsible for obtaining the list of cardio/conditioning exercises given from the Api that match the credentials given
+        public static async Task<ExerciseResponseModel> cardioExercises(string subcategory, string token)
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = $"/exrxapi/v1/allinclusive/exercises?subcategory={subcategory}";
+
+            string response = await client.GetStringAsync(url);
+
+            try
+            {
+                var app = JsonConvert.DeserializeObject<ExerciseResponseModel>(response);
+                return app;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        //only works for burpee (exercise id 1)
+        public static async Task<ExerciseResponseModel> getExerciseById(string ID, string token)
+        {
+            
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            string url = $"http://204.235.60.194/exrxapi/v1/allinclusive/exercises?exerciseids=[1,1]";
+
+            string response = await client.GetStringAsync(url);
+
+            try
+            {
+                var app = JsonConvert.DeserializeObject<ExerciseResponseModel>(response);
+                return app;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

@@ -10,6 +10,9 @@ namespace FitDeck_CSCI4805
         [JsonProperty("exercises")]
         public List<Exercis> exercises { get; set; }
 
+        [JsonProperty("exercis")]
+        public Exercis exercis { get; set; }
+
     }
 
     //specific exercises given by the Api when called
@@ -63,6 +66,7 @@ namespace FitDeck_CSCI4805
         public string Exercise_Name_Complete_Abbreviation { get; set; }
         public string Utility_Icon { get; set; }
         public string Target_Muscle_Group { get; set;}
+
     }
 
    

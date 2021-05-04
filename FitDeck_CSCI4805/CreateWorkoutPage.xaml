@@ -4,8 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FitDeck_CSCI4805.CreateWorkoutPage">
     <ScrollView BackgroundColor="White">
-
-        <Grid Padding="20">
+        <AbsoluteLayout>
+        <StackLayout Padding="5, 5, 5, 5">
+        <Grid>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -21,9 +22,11 @@
                 <ColumnDefinition Width="*" />
 
             </Grid.ColumnDefinitions>
+            <!--Two Titles-->
             <Label x:Name="muscleGroupLbl" Text="Muscle Group" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0" Grid.Column="0"/>
             <Label x:Name="exerciseTypeLbl" Text="Exercise Type" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0" Grid.Column="1"/>
 
+            <!--Picker for bodyparts that will populate specific muscle group based on this selected item-->
             <Picker x:Name="muscleGroupPicker" Title="Muscle Group" SelectedIndexChanged="muscleGroupPicker_SelectedIndexChanged" Grid.Row="1" Grid.Column="0">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -40,30 +43,48 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-
+            <!--Second Picker for muscle group-->
             <Picker x:Name="concentratedMuscleGroupPicker" Title="Specific Muscle Group" Grid.Row="2" Grid.Column="0"/>
 
+            <!--Picker that will help narrow down the exercise search by choosing an apparatus-->
             <Picker x:Name="apparatusPicker" Title="Apparatus" Grid.Row="3" Grid.Column="0">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Band Resistive</x:String>
-                        <x:String>BarBell</x:String>
+                        <x:String>Band</x:String>
+                        <x:String>Barbell</x:String>
                         <x:String>Bodyweight</x:String>
                         <x:String>Cable</x:String>
                         <x:String>Dumbbell</x:String>
-                        <x:String>Kettlebell</x:String>
                         <x:String>Lever</x:String>
                         <x:String>Machine</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
 
+            <!--Picker for the type of exercise-->
+            <Picker x:Name="exerciseTypePicker" Title="Exercise Type" SelectedIndexChanged="exerciseTypePicker_SelectedIndexChanged" Grid.Row="1" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Weight Training</x:String>
+                        <x:String>Plyometrics</x:String>
+                        <x:String>Stretch</x:String>
+                        <x:String>Cardio and Conditioning</x:String>
+                    </x:Array>
+                 </Picker.ItemsSource>
+            </Picker>
+
+            <!--Both pickers will populate based on exerciseTypePicker-->
+            <Picker x:Name="specificTypePicker" Title="Specific Type" Grid.Row="2" Grid.Column="1"/>
+            <Picker x:Name="intensityPicker" Title="Intensity" Grid.Row="3" Grid.Column="1" IsVisible="false"/>
+
+            <!--Button that will trigger the API to populate the list view with search results-->
             <Button x:Name="findExercisesButton" Text="Find Exercises" TextColor="White" BackgroundColor="CornflowerBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Clicked="findExercisesButton_Clicked"/>
 
-            <ListView x:Name="layout" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5">
+            <!--Populated with search results-->
+            <ListView x:Name="exerciseListView" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" ItemSelected="exerciseListView_ItemSelected" HeightRequest="700" RowHeight="125" >
                <ListView.ItemTemplate>
                    <DataTemplate>
-                       <ViewCell>
+                       <ViewCell >
                            <StackLayout>
                                <Grid>
                                     <Grid.RowDefinitions>
@@ -77,11 +98,13 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
+                                   <!--Image doesn't show byut the labels show the appropriate information from the API-->
                                     <Image Source="{Binding image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"/>
-                                    <Label x:Name="exName" Text="{Binding Exercise_Name}" Grid.Column="1" Grid.Row="0" TextColor="CornflowerBlue" Grid.ColumnSpan="2" />
+                                    <Label x:Name="exName" Text="{Binding Exercise_Name, Mode=TwoWay}" FontSize="18" Grid.Column="1" FontAttributes="Bold" Grid.Row="0" TextColor="CornflowerBlue" Grid.ColumnSpan="2" />
+                                    <Label x:Name="setupLabel" Text="{Binding Instructions_Preparation}" TextColor="CornflowerBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+                                    <Label x:Name="descriptionLabel" Text="{Binding Instructions_Execution}" TextColor="CornflowerBlue" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
 
                                </Grid>
-                               
                             </StackLayout>
                             
                        </ViewCell>
@@ -89,5 +112,71 @@
                </ListView.ItemTemplate>
            </ListView>
         </Grid>
+
+
+            <Button BackgroundColor="CornflowerBlue" x:Name="finishCreatingWorkoutButton" Text="Publish Workout" TextColor="White" Clicked="finishCreatingWorkoutButton_Clicked"/>
+<!--Will list each exercise added to the workout list just for testing rn-->
+<ListView x:Name="viewWorkout">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <Label Text="{Binding Name}" TextColor="CornflowerBlue" />
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+        </StackLayout>
+
+            <!--Popup window that asks the user to set the day and name of the workout-->
+            <ContentView x:Name="popupDayView" BackgroundColor="CornflowerBlue" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Enter the day(s) of the week for the workout to appear." TextColor="White" FontSize="25" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <CheckBox x:Name="sundayCheckBox"  Grid.Row="1" Grid.Column="0"/>
+                            <CheckBox x:Name="mondayCheckBox" Grid.Row="2" Grid.Column="0"/>
+                            <CheckBox x:Name="tuesdayCheckBox" Grid.Row="3" Grid.Column="0"/>
+                            <CheckBox x:Name="wednesdayCheckBox" Grid.Row="4" Grid.Column="0"/>
+                            <CheckBox x:Name="thursdayCheckBox" Grid.Row="5" Grid.Column="0"/>
+                            <CheckBox x:Name="fridayCheckBox" Grid.Row="6" Grid.Column="0"/>
+                            <CheckBox x:Name="saturdayCheckBox" Grid.Row="7" Grid.Column="0"/>
+                            <CheckBox x:Name="anydayCheckBox" Grid.Row="8" Grid.Column="0"/>
+
+                            <Label x:Name="sunday" Text="Sunday" TextColor="White" Grid.Row="1" Grid.Column="1"/>
+                            <Label x:Name="monday" Text="Monday" TextColor="White" Grid.Row="2" Grid.Column="1"/>
+                            <Label x:Name="tuesday" Text="Tuesday" TextColor="White" Grid.Row="3" Grid.Column="1"/>
+                            <Label x:Name="wednesday" Text="Wednesday" TextColor="White" Grid.Row="4" Grid.Column="1"/>
+                            <Label x:Name="thursday" Text="Thursday" TextColor="White" Grid.Row="5" Grid.Column="1"/>
+                            <Label x:Name="friday" Text="Friday" TextColor="White" Grid.Row="6" Grid.Column="1"/>
+                            <Label x:Name="saturday" Text="Saturday" TextColor="White" Grid.Row="7" Grid.Column="1"/>
+                            <Label x:Name="anyday" Text="Anyday" TextColor="White" Grid.Row="8" Grid.Column="1"/>
+
+                        </Grid>
+
+                        <Entry x:Name="workoutNameEntry" Placeholder="Enter Workout Name" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Button x:Name="createWorkoutButton" Margin="20,0,20,0" Text="Create Workout" Clicked="createWorkoutButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                    </StackLayout>
+            </ContentView>
+             </AbsoluteLayout>
     </ScrollView>
 </ContentPage>

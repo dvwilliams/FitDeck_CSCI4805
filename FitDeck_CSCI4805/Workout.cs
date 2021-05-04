@@ -14,25 +14,29 @@ namespace FitDeck_CSCI4805
         private string type;
 
         private List<Exercise> exercises;
-        private List<Exercise> Exercises { get { return exercises; } }
+        public List<Exercise> Exercises { set { exercises = value; } get { return exercises; } }
 
         private List <Exercise> superset;
 
         public Workout()
         {
+            this.name = "";
+            this.day = "";
+            exercises = new List<Exercise>();
+            superset = new List<Exercise>();
         }
 
         public Workout(string name, string day)
         {
             this.name = name;
             this.day = day;
-            this.exercises = new List <Exercise>();
+            exercises = new List <Exercise>();
             this.superset = new List<Exercise>();
         }
 
         public void addExercise(Exercise exercise)
         {
-            this.exercises.Add(exercise);
+            exercises.Add(exercise);
         }
 
         public void deleteExercise(Exercise exercise)
@@ -41,11 +45,12 @@ namespace FitDeck_CSCI4805
             {
                 if (ex == exercise)
                 {
-                    this.exercises.Remove(exercise);
+                    exercises.Remove(exercise);
                 }
             }
         }
 
+        //change types to basic(strength), cardio(endurance), keep flexibility
         public string getType()
         {
             int countStrength = 0;
@@ -90,6 +95,7 @@ namespace FitDeck_CSCI4805
             }
         }
 
+        //don't know if i'll keep the supersets
         public void addSuperset(Exercise exercise1, Exercise exercise2)
         {
             
@@ -105,5 +111,7 @@ namespace FitDeck_CSCI4805
             this.exercises = newList;
             return this.exercises;
         }
+
+        
     }
 }

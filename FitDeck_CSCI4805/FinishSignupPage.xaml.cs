@@ -174,12 +174,7 @@ namespace FitDeck_CSCI4805
                 dayDOBPicker.ItemsSource = days;
             }
         }
-
-        void monthDOBPicker_Focused(System.Object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-
-        }
-
+        
     }
 
 }
