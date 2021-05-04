@@ -1,23 +1,43 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{B153FD0E-AC0A-465E-90A3-29268C2DEB46}|Default">
   <MonoDevelop.Ide.ItemProperties.FitDeck__CSCI4805.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.28D98A18-C72F-4F7E-AE4C-ADB231649733" />
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="FitDeck_CSCI4805/RestService.cs" Line="154" Column="1" />
       <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml.cs" Line="24" Column="9" />
       <File FileName="FitDeck_CSCI4805/PreselectedWorkoutPage.xaml.cs" Line="108" Column="36" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="FitDeck_CSCI4805.diff">
+    <Files>
+      <File FileName="FitDeck_CSCI4805/RestService.cs" Line="154" Column="1" />
+      <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml.cs" Line="24" Column="9" />
+      <File FileName="FitDeck_CSCI4805/PreselectedWorkoutPage.xaml.cs" Line="111" Column="36" />
+>>>>>>> Stashed changes
       <File FileName="FitDeck_CSCI4805/ExerciseResponseModel.cs" Line="1" Column="1" />
       <File FileName="FitDeck_CSCI4805/Workout.cs" Line="98" Column="48" />
       <File FileName="FitDeck_CSCI4805/Workouts.cs" Line="1" Column="1" />
       <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml" />
       <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" />
       <File FileName="FitDeck_CSCI4805.diff" Line="1" Column="1" />
+<<<<<<< Updated upstream
+=======
+      <File FileName="UserPrefs.xml.diff" Line="1" Column="1" />
+>>>>>>> Stashed changes
       <File FileName="FitDeck_CSCI48051.diff" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FitDeck_CSCI4805" expanded="True">
+<<<<<<< Updated upstream
             <Node name="FitDeck_CSCI4805" expanded="True" />
+=======
+            <Node name="FitDeck_CSCI4805" expanded="True">
+              <Node name="Account" expanded="True" />
+              <Node name="PreDetermined" expanded="True" selected="True" />
+              <Node name="WebApi" expanded="True" />
+            </Node>
+>>>>>>> Stashed changes
           </Node>
         </State>
       </Pad>
