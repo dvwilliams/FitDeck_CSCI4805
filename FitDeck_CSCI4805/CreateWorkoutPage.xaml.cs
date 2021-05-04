@@ -4,8 +4,8 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using Xamarin.Forms;
 using System.IO;
-using System.Drawing;
-using Image = System.Drawing.Image;
+using FitDeck_CSCI4805.Account;
+using FitDeck_CSCI4805.WebApi;
 using System.Net;
 using System.Diagnostics;
 using Xamarin.Forms.Internals;
@@ -19,16 +19,16 @@ namespace FitDeck_CSCI4805
         Exercis exercise;
         Workout workout;
         List<string> workoutNames;
-        User user;
+        UserAccount _user;
 
         //need user to navigate between pages until databse is used
-        public CreateWorkoutPage(User user)
+        public CreateWorkoutPage(UserAccount _user)
         {
-            this.user = user;
             InitializeComponent();
             restService = new RestService();
             exercises = new List<Exercise>();
             workout = new Workout();
+            this._user = _user;
         }
 
         //Method to populate specific muscle group picker with the appropriate muscle group
@@ -424,7 +424,7 @@ namespace FitDeck_CSCI4805
                     workout.Day = anyday.ToString();
                 }
                 workout.Name = workoutNameEntry.Text;
-                Navigation.PushAsync(new ProfileHomePage(user));
+                Navigation.PushAsync(new ProfileHomePage(_user));
             }
         }
 

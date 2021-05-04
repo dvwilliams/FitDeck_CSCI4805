@@ -8,19 +8,15 @@ namespace FitDeck_CSCI4805
 {
     public partial class ProfileHomePage : ContentPage
     {
-<<<<<<< HEAD
-        User user;
         RestDay restDay;
         RestDays restDays;
         Workouts workouts;
         Workout workout;
 
         //need user to navigate between pages until databse is used
-        public ProfileHomePage(User user)
-=======
+       
         UserAccount user;
         public ProfileHomePage(UserAccount user)
->>>>>>> ab5e0bc81a83fe07b15bfdc88196a16b297ed5a8
         {
             InitializeComponent();
 
@@ -58,7 +54,7 @@ namespace FitDeck_CSCI4805
             }
             else if(answer == "Add Preselected Workout")
             {
-                await Navigation.PushAsync(new PreselectedWorkoutPage(user));
+                await Navigation.PushAsync(new PredeterminedWorkoutPage(user));
             }
             
         }

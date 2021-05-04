@@ -90,6 +90,7 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
 
                                     <Grid.ColumnDefinitions>
@@ -174,7 +175,7 @@
                         </Grid>
 
                         <Entry x:Name="workoutNameEntry" Placeholder="Enter Workout Name" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"/>
-                        <Button x:Name="createWorkoutButton" Margin="20,0,20,0" Text="Create Workout" Clicked="createWorkoutButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                        <Button x:Name="createWorkoutButton" Margin="20,0,20,0" Text="Create Workout" TextColor="White" BackgroundColor="CornflowerBlue" BorderColor="White" Clicked="createWorkoutButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
                     </StackLayout>
             </ContentView>
              </AbsoluteLayout>

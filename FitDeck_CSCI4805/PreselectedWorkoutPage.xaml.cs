@@ -1,4 +1,4 @@
-﻿using System;
+﻿/**using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -11,11 +11,9 @@ namespace FitDeck_CSCI4805
         RestService restService;
         User user;
         PreselectedWorkout pw;
-
         //need user to navigate between pages until databse is used
         public PreselectedWorkoutPage(User user)
         {
-<<<<<<< HEAD
             InitializeComponent();
             workout = new PreselectedWorkout();
             restService = new RestService();
@@ -197,9 +195,8 @@ namespace FitDeck_CSCI4805
         void addWorkoutButton_Clicked(System.Object sender, System.EventArgs e)
         {
             popupDayView.IsVisible = true;
-=======
-            //InitializeComponent();
->>>>>>> ab5e0bc81a83fe07b15bfdc88196a16b297ed5a8
+
         }
     }
 }
+**/

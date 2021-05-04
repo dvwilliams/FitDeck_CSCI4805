@@ -118,7 +118,7 @@
 
                         </Grid>
 
-                        <Button x:Name="addRestDaysButton" Margin="20,0,20,0" Text="Add RestDay(s)" Clicked="addRestDaysButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                        <Button x:Name="addRestDaysButton" Margin="20,0,20,0" Text="Add RestDay(s)" TextColor="White" BackgroundColor="CornflowerBlue" BorderColor="White" Clicked="addRestDaysButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
                     </StackLayout>
             </ContentView>
                 </StackLayout>

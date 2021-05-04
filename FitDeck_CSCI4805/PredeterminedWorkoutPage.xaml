@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FitDeck_CSCI4805.PredeterminedWorkoutPage">
+    <ScrollView BackgroundColor="White">
+        <AbsoluteLayout>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+            </Grid>
+
+            <Label Text="Predetermine Workouts" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0"/>
+
+            <Picker x:Name="selectWorkoutPicker" Title="Select a Workout" Grid.Row="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Cardio and Conditioning Workout</x:String>
+                        <x:String>Plyometric Workout</x:String>
+                        <x:String>Stretch Workout</x:String>
+                        <x:String>Abdominal Workout</x:String>
+                        <x:String>Arms Workout</x:String>
+                        <x:String>Back Workout</x:String>
+                        <x:String>Chest Workout</x:String>
+                        <x:String>Legs Workout</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button x:Name="chooseWorkoutButton" Text="Choose Predetermined Workout" TextColor="White" BackgroundColor="CornflowerBlue" Grid.Row="2" Clicked="chooseWorkoutButton_Clicked"/>
+
+            <ListView x:Name="preselectedWorkoutsView" HeightRequest="700" RowHeight="125" Grid.Row="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                             <StackLayout>
+                               <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                   <!--Image doesn't show but the labels show the appropriate information from the API-->
+                                    <Image Source="{Binding image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"/>
+                                    <Label x:Name="exName" Text="{Binding Exercise_Name, Mode=TwoWay}" FontSize="18" Grid.Column="1" FontAttributes="Bold" Grid.Row="0" TextColor="CornflowerBlue" Grid.ColumnSpan="2" />
+                                    <Label x:Name="setupLabel" Text="{Binding Instructions_Preparation}" TextColor="CornflowerBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+                                    <Label x:Name="descriptionLabel" Text="{Binding Instructions_Execution}" TextColor="CornflowerBlue" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                               </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="addWorkoutButton" Text="Add Workout" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="addWorkoutButton_Clicked"/>
+
+             <!--Popup window that asks the user to set the day and name of the workout-->
+            <ContentView x:Name="popupDayView" BackgroundColor="CornflowerBlue" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Enter the day(s) of the week for the workout to appear." TextColor="White" FontSize="25" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <CheckBox x:Name="sundayCheckBox"  Grid.Row="1" Grid.Column="0"/>
+                            <CheckBox x:Name="mondayCheckBox" Grid.Row="2" Grid.Column="0"/>
+                            <CheckBox x:Name="tuesdayCheckBox" Grid.Row="3" Grid.Column="0"/>
+                            <CheckBox x:Name="wednesdayCheckBox" Grid.Row="4" Grid.Column="0"/>
+                            <CheckBox x:Name="thursdayCheckBox" Grid.Row="5" Grid.Column="0"/>
+                            <CheckBox x:Name="fridayCheckBox" Grid.Row="6" Grid.Column="0"/>
+                            <CheckBox x:Name="saturdayCheckBox" Grid.Row="7" Grid.Column="0"/>
+                            <CheckBox x:Name="anydayCheckBox" Grid.Row="8" Grid.Column="0"/>
+
+                            <Label x:Name="sunday" Text="Sunday" TextColor="White" Grid.Row="1" Grid.Column="1"/>
+                            <Label x:Name="monday" Text="Monday" TextColor="White" Grid.Row="2" Grid.Column="1"/>
+                            <Label x:Name="tuesday" Text="Tuesday" TextColor="White" Grid.Row="3" Grid.Column="1"/>
+                            <Label x:Name="wednesday" Text="Wednesday" TextColor="White" Grid.Row="4" Grid.Column="1"/>
+                            <Label x:Name="thursday" Text="Thursday" TextColor="White" Grid.Row="5" Grid.Column="1"/>
+                            <Label x:Name="friday" Text="Friday" TextColor="White" Grid.Row="6" Grid.Column="1"/>
+                            <Label x:Name="saturday" Text="Saturday" TextColor="White" Grid.Row="7" Grid.Column="1"/>
+                            <Label x:Name="anyday" Text="Anyday" TextColor="White" Grid.Row="8" Grid.Column="1"/>
+
+                        </Grid>
+
+                        <Button x:Name="addPreselectedWorkoutButton" Margin="20,0,20,0" Text="Add Predetermined Workout" TextColor="White" BackgroundColor="CornflowerBlue" BorderColor="White" BorderWidth="1" Clicked="addPreselectedWorkoutButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                    </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>
