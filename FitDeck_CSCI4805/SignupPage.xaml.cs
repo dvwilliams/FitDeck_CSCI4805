@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using FitDeck_CSCI4805.Account;
 using Xamarin.Forms;
 
 namespace FitDeck_CSCI4805
@@ -25,10 +25,11 @@ namespace FitDeck_CSCI4805
             else
             {
                 //Still need to: validate password
+                //UserSignup signup = new UserSignup();
                
-                User user = new User(usernameEntry.Text, emailEntry.Text);
-                //user.Password = passwordEntry.Text;
-                Navigation.PushAsync(new FinishSignupPage(usernameEntry.Text, emailEntry.Text));
+                //User user = new User(usernameEntry.Text, emailEntry.Text);
+                ////user.Password = passwordEntry.Text;
+                Navigation.PushAsync(new FinishSignupPage(usernameEntry.Text, emailEntry.Text, passwordEntry.Text));
             }
         }
     }

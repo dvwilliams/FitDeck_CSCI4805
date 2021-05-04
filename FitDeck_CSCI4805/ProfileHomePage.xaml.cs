@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using FitDeck_CSCI4805.Account;
 using Xamarin.Forms;
 
 namespace FitDeck_CSCI4805
 {
     public partial class ProfileHomePage : ContentPage
     {
+<<<<<<< HEAD
         User user;
         RestDay restDay;
         RestDays restDays;
@@ -15,15 +17,19 @@ namespace FitDeck_CSCI4805
 
         //need user to navigate between pages until databse is used
         public ProfileHomePage(User user)
+=======
+        UserAccount user;
+        public ProfileHomePage(UserAccount user)
+>>>>>>> ab5e0bc81a83fe07b15bfdc88196a16b297ed5a8
         {
             InitializeComponent();
 
             this.user = user;
-            lblName.Text = user.Name;
-            lblUsername.Text = user.Username;
-            lblEmail.Text = user.EmailAddress;
-            lblAge.Text = user.getAge().ToString();
-            lblHeight.Text = user.heightString();
+            lblName.Text = user.FullName;
+            lblUsername.Text = user.UserName;
+            lblEmail.Text = user.Email;
+            lblAge.Text = user.Age.ToString();
+            lblHeight.Text = user.GetHeightString();
             lblWeight.Text = user.Weight.ToString();
 
         }
