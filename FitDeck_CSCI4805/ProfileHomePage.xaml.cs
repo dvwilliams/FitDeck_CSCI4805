@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using FitDeck_CSCI4805.Account;
 using Xamarin.Forms;
 
 namespace FitDeck_CSCI4805
 {
     public partial class ProfileHomePage : ContentPage
     {
-        User user;
-        public ProfileHomePage(User user)
+        UserAccount user;
+        public ProfileHomePage(UserAccount user)
         {
             InitializeComponent();
 
             this.user = user;
-            lblName.Text = user.Name;
-            lblUsername.Text = user.Username;
-            lblEmail.Text = user.EmailAddress;
-            lblAge.Text = user.getAge().ToString();
-            lblHeight.Text = user.heightString();
+            lblName.Text = user.FullName;
+            lblUsername.Text = user.UserName;
+            lblEmail.Text = user.Email;
+            lblAge.Text = user.Age.ToString();
+            lblHeight.Text = user.GetHeightString();
             lblWeight.Text = user.Weight.ToString();
         }
 

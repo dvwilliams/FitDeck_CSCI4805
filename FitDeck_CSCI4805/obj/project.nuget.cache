@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "FDWWNgniYX/z069MWFjX50rYLQVVroFBYvpJzNXEtPdLtuo8dPYOt9b8Z0aR1UanEA+tWWPxflr14AwHHSJDVg==",
+  "dgSpecHash": "bz44P7acDUAb/Ap9SKCsv/kGOLuzLaVxbGjA602jhFDaFh+1SQ2GkJib8JfxwAT4oOd0oZ7OOw6E7YRa9QFfDg==",
   "success": true,
-  "projectFilePath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj",
+  "projectFilePath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj",
   "expectedPackageFiles": [
-    "/Users/daphnewilliams/.nuget/packages/microsoft.aspnet.webapi.client/5.2.7/microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/syncfusion.licensing/19.1.0.55/syncfusion.licensing.19.1.0.55.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/syncfusion.xamarin.core/19.1.0.55/syncfusion.xamarin.core.19.1.0.55.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/syncfusion.xamarin.sfchart/19.1.0.55/syncfusion.xamarin.sfchart.19.1.0.55.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/system.drawing.common/5.0.2/system.drawing.common.5.0.2.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
-    "/Users/daphnewilliams/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "/Users/shanetrentham/.nuget/packages/microsoft.aspnet.webapi.client/5.2.7/microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/syncfusion.licensing/19.1.0.55/syncfusion.licensing.19.1.0.55.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/syncfusion.xamarin.core/19.1.0.55/syncfusion.xamarin.core.19.1.0.55.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/syncfusion.xamarin.sfchart/19.1.0.55/syncfusion.xamarin.sfchart.19.1.0.55.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/system.drawing.common/5.0.2/system.drawing.common.5.0.2.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/shanetrentham/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

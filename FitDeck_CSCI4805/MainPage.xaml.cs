@@ -17,7 +17,7 @@ namespace FitDeck_CSCI4805
 
         void loginBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-
+            Navigation.PushAsync(new LoginPage());
         }
 
         void signupBtn_Clicked(System.Object sender, System.EventArgs e)

@@ -811,23 +811,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/daphnewilliams/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/shanetrentham/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj",
+      "projectUniqueName": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj",
       "projectName": "FitDeck_CSCI4805",
-      "projectPath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj",
-      "packagesPath": "/Users/daphnewilliams/.nuget/packages/",
-      "outputPath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/obj/",
+      "projectPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj",
+      "packagesPath": "/Users/shanetrentham/.nuget/packages/",
+      "outputPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/daphnewilliams/.config/NuGet/NuGet.Config"
+        "/Users/shanetrentham/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

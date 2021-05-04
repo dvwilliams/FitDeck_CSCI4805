@@ -4,6 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FitDeck_CSCI4805.LoginPage">
     <ContentPage.Content>
-        
+        <StackLayout BackgroundColor="CornflowerBlue">
+        <Entry x:Name="usernameEntry" Placeholder="Username" HeightRequest="45" Margin="60, 130, 60, 10" Keyboard="Default"/>
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" HeightRequest="45" Margin="60, 10, 60, 0" Keyboard="Default"/>
+        <Button x:Name="SigninBtn" Text="Sign in" BackgroundColor="White" FontSize="20" TextColor="CornflowerBlue" Margin="60,60" Clicked="SigninBtn_Clicked"/>
+    </StackLayout>
     </ContentPage.Content>
 </ContentPage>

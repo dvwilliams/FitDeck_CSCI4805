@@ -1,23 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using FitDeck_CSCI4805.Account;
+using FitDeck_CSCI4805.WebApi;
 using Xamarin.Forms;
 
 namespace FitDeck_CSCI4805
 {
     public partial class FinishSignupPage : ContentPage
     {
-        string username, emailaddress;
+        string username, emailaddress, password;
+        UserAccount user;
+        ConnectApi connect;
 
-        public FinishSignupPage(string username, string emailAddress)
+        public FinishSignupPage(string username, string emailAddress, string password)
         {
             InitializeComponent();
 
             this.username = username;
             this.emailaddress = emailAddress;
-
+            this.password = password;
+            user = new UserAccount();
+            connect = new ConnectApi();
         }
-        void finishAccountBtn_Clicked(System.Object sender, System.EventArgs e)
+        async void finishAccountBtn_Clicked(System.Object sender, System.EventArgs e)
         {
             if (nameEntry == null || monthDOBPicker.SelectedIndex == -1 || dayDOBPicker.SelectedIndex == -1 ||
                 yearEntry == null || weightEntry == null || feetHeightPicker.SelectedIndex == -1 || inchesHeightPicker.SelectedIndex == -1)
@@ -38,14 +44,26 @@ namespace FitDeck_CSCI4805
                     int day = (int)dayDOBPicker.SelectedItem;
                     int year = Int32.Parse(yearEntry.Text);
                     DateTime dOB = new DateTime(year, month, day);
-
+                    DateTime today = DateTime.Now;
+                    int age = today.Year - dOB.Year;
 
                     int feet = (int)feetHeightPicker.SelectedItem;
                     int inches = (int)inchesHeightPicker.SelectedItem;
-                    float ins = (float)inches / 100;
-                    float height = feet + ins;
-                    Math.Round(height, 2);
-                    User user = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
+                    //float ins = (float)inches / 100;
+                    int height = feet * 12 + inches;
+                    //place holder
+                    float weight = float.Parse(weightEntry.Text);
+                    UserSignup signup = new UserSignup(username, password, emailaddress, nameEntry.Text, age, height, weight);
+                    await DisplayAlert("Success:", "This actually works", "OK");
+                    Console.WriteLine("Hello");
+                    user = await connect.SignupAsync(signup);
+                    if(user.Token != null)
+                    {
+                       await DisplayAlert("success:", user.FullName, "OK");
+                    }
+                    
+                    //Math.Round(height, 2);
+                    //User user = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
 
                     //Created to test whether the data was being stored or not
                     //ObservableCollection<string> data = new ObservableCollection<string>();

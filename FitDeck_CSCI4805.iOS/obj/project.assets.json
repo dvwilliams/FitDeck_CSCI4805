@@ -6085,20 +6085,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/daphnewilliams/.nuget/packages/": {}
+    "/Users/shanetrentham/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/FitDeck_CSCI4805.iOS.csproj",
+      "projectUniqueName": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/FitDeck_CSCI4805.iOS.csproj",
       "projectName": "FitDeck_CSCI4805.iOS",
-      "projectPath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/FitDeck_CSCI4805.iOS.csproj",
-      "packagesPath": "/Users/daphnewilliams/.nuget/packages/",
-      "outputPath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/",
+      "projectPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/FitDeck_CSCI4805.iOS.csproj",
+      "packagesPath": "/Users/shanetrentham/.nuget/packages/",
+      "outputPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/daphnewilliams/.config/NuGet/NuGet.Config"
+        "/Users/shanetrentham/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -6109,8 +6109,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj": {
-              "projectPath": "/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj"
+            "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj": {
+              "projectPath": "/Users/shanetrentham/Documents/Spring_2021/CSCI_4805/FitDeck/FitDeck_CSCI4805/FitDeck_CSCI4805/FitDeck_CSCI4805.csproj"
             }
           }
         }

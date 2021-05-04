@@ -9,7 +9,7 @@ namespace FitDeck_CSCI4805
     {
         public PreselectedWorkoutPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }
