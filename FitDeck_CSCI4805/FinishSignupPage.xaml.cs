@@ -28,7 +28,7 @@ namespace FitDeck_CSCI4805
             if (nameEntry == null || monthDOBPicker.SelectedIndex == -1 || dayDOBPicker.SelectedIndex == -1 ||
                 yearEntry == null || weightEntry == null || feetHeightPicker.SelectedIndex == -1 || inchesHeightPicker.SelectedIndex == -1)
             {
-                DisplayAlert("Error:", "All boxes must have valid entries.", "OK");
+                await DisplayAlert("Error:", "All boxes must have valid entries.", "OK");
 
             }
             else
@@ -36,7 +36,7 @@ namespace FitDeck_CSCI4805
                 int parseYear = int.Parse(yearEntry.Text);
                 if (parseYear >= 2022 || parseYear <= 1849)
                 {
-                    DisplayAlert("Error:", "Please Enter a valid year.", "OK");
+                    await DisplayAlert("Error:", "Please Enter a valid year.", "OK");
                 }
                 else
                 {
@@ -72,7 +72,7 @@ namespace FitDeck_CSCI4805
 
                     //navigates to the next page in the app
                     //paramater of user needed to test without the database
-                    Navigation.PushAsync(new ProfileHomePage(user));
+                    await Navigation.PushAsync(new ProfileHomePage(user));
                 }
             }
         }

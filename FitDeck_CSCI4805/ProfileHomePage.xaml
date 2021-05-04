@@ -121,7 +121,162 @@
                         <Button x:Name="addRestDaysButton" Margin="20,0,20,0" Text="Add RestDay(s)" TextColor="White" BackgroundColor="CornflowerBlue" BorderColor="White" Clicked="addRestDaysButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
                     </StackLayout>
             </ContentView>
-                </StackLayout>
-            </AbsoluteLayout>
+                 <ContentView x:Name="popupEditWorkoutsView" BackgroundColor="CornflowerBlue" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                             
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Picker x:Name="listOfWorkoutsPicker" Grid.Row="0" Grid.ColumnSpan="2" Title="Select a Workout to Edit/Delete" ItemsSource="{Binding workouts}">
+                                
+                            </Picker>
+                            <Button x:Name="editSpecificWorkoutButton" Grid.Row="1" Grid.Column="0" Text="Edit Workout" TextColor="CornflowerBlue" BackgroundColor="White" Clicked="editSpecificWorkoutButton_Clicked"/>
+                            <Button x:Name="deleteWorkoutButton" Grid.Row="1" Grid.Column="1" Text="Delete Workout" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="deleteWorkoutButton_Clicked"/>
+
+                            
+                            <Button x:Name="finishEditingWorkoutButton" Text="Finish Editing Workout" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="finishEditingWorkoutButton_Clicked"/>
+
+                        </Grid>
+                    </StackLayout>
+                </ContentView>
+                <ContentView x:Name="popupEditSpecificWorkoutView" BackgroundColor="White" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+
+                             
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+
+                                        <!--Two Titles-->
+                                        <Label x:Name="muscleGroupLbl" Text="Muscle Group" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0" Grid.Column="0"/>
+                                        <Label x:Name="exerciseTypeLbl" Text="Exercise Type" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0" Grid.Column="1"/>
+
+                                        <!--Picker for bodyparts that will populate specific muscle group based on this selected item-->
+                                        <Picker x:Name="muscleGroupPicker" Title="Muscle Group" SelectedIndexChanged="muscleGroupPicker_SelectedIndexChanged" Grid.Row="1" Grid.Column="0">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Upper Arms</x:String>
+                                                    <x:String>ForeArms</x:String>
+                                                    <x:String>Shoulders</x:String>
+                                                    <x:String>Hips</x:String>
+                                                    <x:String>Chest</x:String>
+                                                    <x:String>Back</x:String>
+                                                    <x:String>Waist</x:String>
+                                                    <x:String>Neck</x:String>
+                                                    <x:String>Thighs</x:String>
+                                                    <x:String>Calves</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                        <!--Second Picker for muscle group-->
+                                        <Picker x:Name="concentratedMuscleGroupPicker" Title="Specific Muscle Group" Grid.Row="2" Grid.Column="0"/>
+
+                                        <!--Picker that will help narrow down the exercise search by choosing an apparatus-->
+                                        <Picker x:Name="apparatusPicker" Title="Apparatus" Grid.Row="3" Grid.Column="0">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Band</x:String>
+                                                    <x:String>Barbell</x:String>
+                                                    <x:String>Bodyweight</x:String>
+                                                    <x:String>Cable</x:String>
+                                                    <x:String>Dumbbell</x:String>
+                                                    <x:String>Lever</x:String>
+                                                    <x:String>Machine</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+
+                                        <!--Picker for the type of exercise-->
+                                        <Picker x:Name="exerciseTypePicker" Title="Exercise Type" SelectedIndexChanged="exerciseTypePicker_SelectedIndexChanged" Grid.Row="1" Grid.Column="1">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>Weight Training</x:String>
+                                                    <x:String>Plyometrics</x:String>
+                                                    <x:String>Stretch</x:String>
+                                                    <x:String>Cardio and Conditioning</x:String>
+                                                </x:Array>
+                                                </Picker.ItemsSource>
+                                        </Picker>
+
+                                        <!--Both pickers will populate based on exerciseTypePicker-->
+                                        <Picker x:Name="specificTypePicker" Title="Specific Type" Grid.Row="2" Grid.Column="1"/>
+                                        <Picker x:Name="intensityPicker" Title="Intensity" Grid.Row="3" Grid.Column="1" IsVisible="false"/>
+
+                                        <!--Button that will trigger the API to populate the list view with search results-->
+                                        <Button x:Name="findExercisesButton" Text="Find Exercises" TextColor="White" BackgroundColor="CornflowerBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Clicked="findExercisesButton_Clicked"/>
+
+                                        <!--Populated with search results-->
+                                        <ListView x:Name="exerciseListView" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" ItemSelected="exerciseListView_ItemSelected" HeightRequest="700" RowHeight="125" >
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell >
+                                                        <StackLayout>
+                                                            <Grid>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <!--Image doesn't show but the labels show the appropriate information from the API-->
+                                                                <Image Source="{Binding image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"/>
+                                                                <Label x:Name="exName" Text="{Binding Exercise_Name}" FontSize="18" Grid.Column="1" FontAttributes="Bold" Grid.Row="0" TextColor="CornflowerBlue" Grid.ColumnSpan="2" />
+                                                                <Label x:Name="setupLabel" Text="{Binding Instructions_Preparation}" TextColor="CornflowerBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+                                                                <Label x:Name="descriptionLabel" Text="{Binding Instructions_Execution}" TextColor="CornflowerBlue" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                                                            </Grid>
+                                                        </StackLayout>
+                            
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </Grid>
+                                    <Button x:Name="finishEditingExercisesButton" Text="Finish Adding Exercises" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="finishEditingExercisesButton_Clicked"/>
+                                    <ListView x:Name="viewWorkout">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Label Text="{Binding Name}" TextColor="CornflowerBlue" />
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackLayout>
+                            </ContentView>
+            </StackLayout>
+        </AbsoluteLayout>
     </ScrollView>
 </ContentPage>

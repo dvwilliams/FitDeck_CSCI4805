@@ -63,11 +63,6 @@ namespace FitDeck_CSCI4805
             return h;
         }
 
-        //created to test app
-        public override string ToString()
-        {
-            return "Name: " + this.name +
-                " Birthday: " + this.dOB + "\nWeight: " + this.weight + " Height: " + this.height;
-        }
+        
     }
 }

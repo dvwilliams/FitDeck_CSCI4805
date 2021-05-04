@@ -5,7 +5,7 @@
     x:Class="FitDeck_CSCI4805.PredeterminedWorkoutPage">
     <ScrollView BackgroundColor="White">
         <AbsoluteLayout>
-            
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Grid>
                 <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -16,8 +16,6 @@
                 <RowDefinition Height="Auto" />
 
             </Grid.RowDefinitions>
-            </Grid>
-
             <Label Text="Predetermine Workouts" TextColor="CornflowerBlue" FontSize="25" Grid.Row="0"/>
 
             <Picker x:Name="selectWorkoutPicker" Title="Select a Workout" Grid.Row="1">
@@ -67,8 +65,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="addWorkoutButton" Text="Add Workout" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="addWorkoutButton_Clicked"/>
-
+            <Button x:Name="addWorkoutButton" Text="Add Workout" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="addWorkoutButton_Clicked" Grid.Row="4"/>
+                </Grid>
+            
              <!--Popup window that asks the user to set the day and name of the workout-->
             <ContentView x:Name="popupDayView" BackgroundColor="CornflowerBlue" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
@@ -118,6 +117,7 @@
                         <Button x:Name="addPreselectedWorkoutButton" Margin="20,0,20,0" Text="Add Predetermined Workout" TextColor="White" BackgroundColor="CornflowerBlue" BorderColor="White" BorderWidth="1" Clicked="addPreselectedWorkoutButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
                     </StackLayout>
             </ContentView>
+                </StackLayout>
         </AbsoluteLayout>
     </ScrollView>
 </ContentPage>

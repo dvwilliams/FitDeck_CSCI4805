@@ -329,7 +329,7 @@ namespace FitDeck_CSCI4805
             }
             if (workout != null)
             {
-                viewWorkout.ItemsSource = workout.ToString();
+                viewWorkout.ItemsSource = workout.Exercises;
             }
         }
 
@@ -347,7 +347,7 @@ namespace FitDeck_CSCI4805
                 exercises.Add(exer);
                 
                 workout.addExercise(exer);
-                viewWorkout.ItemsSource = workout.ToString();
+                viewWorkout.ItemsSource = workout.Exercises;
 
                 
             }
