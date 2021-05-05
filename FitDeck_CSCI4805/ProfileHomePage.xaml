@@ -50,8 +50,16 @@
 
             </Frame>
             <!--View Daily and Weekly Stats-->
-            <!--Working on right now-->
-            <StackLayout Grid.Row="2" Grid.ColumnSpan="3">
+            <StackLayout x:Name="statsLayout" BindingContext="{Binding WeeklyStats}" Grid.Row="2" Grid.ColumnSpan="3" >
+                <chart:SfChart>
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis/>
+                </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis/>
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:ColumnSeries x:Name="dailyStatsCharts" XBindingPath="Day" YBindingPath="CaloriesBurned"/>
+                    </chart:SfChart>
                 <Label Text="Daily Stats:" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                 <Label Text="Weekly Stats:" TextColor="White" FontSize="25" FontAttributes="Bold"/>
             </StackLayout>
@@ -59,8 +67,8 @@
             <Button x:Name="addWorkoutButton" Text="Add Workout" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="0" Clicked="addWorkoutButton_Clicked"></Button>
             <Button x:Name="editWorkoutButton" Text="Edit Workout" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="1" Clicked="editWorkoutButton_Clicked" ></Button>
             <Button x:Name="addRestDayButton" Text="Add Rest Day" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="2" Clicked="addRestDayButton_Clicked"></Button>
-
-            <ListView x:Name="workoutsListView" Grid.Row="4" Grid.ColumnSpan="3">
+            <Button x:Name="startWorkoutButton" Text="Start a Workout" TextColor="CornflowerBlue" BackgroundColor="White" BorderColor="CornflowerBlue" BorderWidth="3" Grid.Row="4" Grid.ColumnSpan="3" Clicked="startWorkoutButton_Clicked"/>
+            <ListView x:Name="workoutsListView" Grid.Row="5" Grid.ColumnSpan="3">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
@@ -121,6 +129,8 @@
                         <Button x:Name="addRestDaysButton" Margin="20,0,20,0" Text="Add RestDay(s)" TextColor="White" BackgroundColor="CornflowerBlue" BorderColor="White" Clicked="addRestDaysButton_Clicked" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
                     </StackLayout>
             </ContentView>
+
+                <!--Pop up window to trigger editing of workout-->
                  <ContentView x:Name="popupEditWorkoutsView" BackgroundColor="CornflowerBlue" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
@@ -263,8 +273,8 @@
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                         </ListView>
-                                    </Grid>
-                                    <Button x:Name="finishEditingExercisesButton" Text="Finish Adding Exercises" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="finishEditingExercisesButton_Clicked"/>
+                                        <Button x:Name="finishEditingExercisesButton" Text="Finish Adding Exercises" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="finishEditingExercisesButton_Clicked"/>
+
                                     <ListView x:Name="viewWorkout">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
@@ -274,7 +284,50 @@
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>
+                                    </Grid>
+                                    
                                 </StackLayout>
+                            </ContentView>
+                <ContentView x:Name="popupStartWorkoutView" BackgroundColor="White" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Picker x:Name="workoutToStartPicker" Title="Select a workout to start"/>
+                                    <Label x:Name="stopwatchLabel" TextColor="CornflowerBlue"/>
+                                    <Button x:Name="startButton" Text="Start Timer" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="startButton_Clicked"/>
+                                    <Button x:Name="pauseButton" Text="Pause Timer" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="pauseButton_Clicked"/>
+                                    <Button x:Name="stopButton" Text="Stop Timer and End Workout" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="stopButton_Clicked"/>
+
+                                    <ListView x:Name="exerciseListStartWorkoutView" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" ItemSelected="exerciseListView_ItemSelected" HeightRequest="700" RowHeight="140" >
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell >
+                                                        <StackLayout>
+                                                            <Grid>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <!--Image doesn't show but the labels show the appropriate information from the API-->
+                                                                <Image Source="{Binding image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"/>
+                                                                <Label x:Name="exName" Text="{Binding Exercise_Name}" FontSize="18" Grid.Column="1" FontAttributes="Bold" Grid.Row="0" TextColor="CornflowerBlue" Grid.ColumnSpan="2" />
+                                                                <Label x:Name="setupLabel" Text="{Binding Instructions_Preparation}" TextColor="CornflowerBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+                                                                <Label x:Name="descriptionLabel" Text="{Binding Instructions_Execution}" TextColor="CornflowerBlue" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                                                            </Grid>
+                                                        </StackLayout>
+                            
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
                             </ContentView>
             </StackLayout>
         </AbsoluteLayout>

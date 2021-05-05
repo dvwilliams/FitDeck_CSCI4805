@@ -16,6 +16,9 @@ namespace FitDeck_CSCI4805
         List<Exercise> exercises;
         Exercis exercise;
         List<string> workoutNames;
+        Stopwatch stopwatch;
+        DailyStats dailystats;
+        WeeklyStats weeklyStats;
 
         //need user to navigate between pages until database is used
         //doesnt show user info anymore!!
@@ -27,6 +30,13 @@ namespace FitDeck_CSCI4805
             restService = new RestService();
             exercises = new List<Exercise>();
             workout = new Workout();
+            stopwatch = new Stopwatch();
+            dailystats = new DailyStats();
+            weeklyStats = new WeeklyStats();
+
+            DailyStats dailystat = new DailyStats((float)1.20, 45, DayOfWeek.Monday);
+            weeklyStats.addDailyStat(dailystat);
+            dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
 
             this.user = user;
             lblName.Text = user.FullName;
@@ -543,6 +553,66 @@ namespace FitDeck_CSCI4805
 
             }
 
+        }
+
+        void startWorkoutButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            //need to grab itemssource from db
+            workoutToStartPicker.ItemsSource = workouts._Workouts;
+            
+            
+                popupStartWorkoutView.IsVisible = true;
+            
+        }
+
+        void startButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (workoutToStartPicker.SelectedItem == null)
+            {
+                DisplayAlert("Error", "Please add a workout or select a workout to start", "OK");
+            }
+            else
+            {
+
+                if (!stopwatch.IsRunning)
+                {
+                    stopwatch.Start();
+                    Device.StartTimer(TimeSpan.FromSeconds(100), () =>
+                    {
+                        Device.BeginInvokeOnMainThread(() =>
+                        stopwatchLabel.Text = stopwatch.Elapsed.ToString());
+                        if (!stopwatch.IsRunning)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    });
+                }
+            }
+        }
+
+        void stopButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            stopwatch.Stop();
+            float time = float.Parse(stopwatchLabel.Text);
+
+            //DailyStats dailystat = new DailyStats(time, dailystats.caloriesburned(), DateTime.Now.DayOfWeek);
+
+            //tester for chart. doesnt work for now
+            DailyStats dailystat = new DailyStats((float)1.20, 45, DayOfWeek.Monday);
+            weeklyStats.addDailyStat(dailystat);
+            dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
+
+            stopwatchLabel.Text = "You spent " + dailystat.convertTimeSpent() + " minutes working out and burned " + dailystat.CaloriesBurned + " calories.";
+        }
+
+        void pauseButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            startButton.Text = "Resume";
+            stopwatch.Stop();
         }
     }
 }

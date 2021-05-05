@@ -3,16 +3,14 @@
   <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml.cs" Line="332" Column="60" />
-      <File FileName="FitDeck_CSCI4805/Workout.cs" Line="98" Column="48" />
+      <File FileName="FitDeck_CSCI4805/Workout.cs" Line="70" Column="33" />
       <File FileName="FitDeck_CSCI4805/Workouts.cs" Line="1" Column="1" />
       <File FileName="FitDeck_CSCI4805/CreateWorkoutPage.xaml" Line="20" Column="13" />
-      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" Line="278" Column="43" />
-      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" Line="82" Column="71" />
-      <File FileName="FitDeck_CSCI4805/FinishSignupPage.xaml.cs" Line="75" Column="27" />
-      <File FileName="FitDeck_CSCI4805/User.cs" Line="66" Column="9" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml" Line="53" Column="72" />
+      <File FileName="FitDeck_CSCI4805/ProfileHomePage.xaml.cs" Line="609" Column="157" />
+      <File FileName="FitDeck_CSCI4805/DailyStats.cs" Line="26" Column="15" />
+      <File FileName="FitDeck_CSCI4805/User.cs" Line="29" Column="24" />
       <File FileName="FitDeck_CSCI4805.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="FitDeck_CSCI4805/PredeterminedWorkoutPage.xaml" Line="120" Column="31" />
-      <File FileName="FitDeck_CSCI4805/PredeterminedWorkoutPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,8 +20,10 @@
               <Node name="CreateWorkoutPage.xaml" expanded="True" />
               <Node name="FinishSignupPage.xaml" expanded="True" />
               <Node name="LoginPage.xaml" expanded="True" />
-              <Node name="PredeterminedWorkoutPage.xaml" expanded="True" selected="True" />
-              <Node name="ProfileHomePage.xaml" expanded="True" />
+              <Node name="PredeterminedWorkoutPage.xaml" expanded="True" />
+              <Node name="ProfileHomePage.xaml" expanded="True">
+                <Node name="ProfileHomePage.xaml.cs" selected="True" />
+              </Node>
               <Node name="SignupPage.xaml" expanded="True" />
             </Node>
             <Node name="FitDeck_CSCI4805.iOS" expanded="True" />

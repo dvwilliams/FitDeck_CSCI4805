@@ -24,6 +24,10 @@ namespace FitDeck_CSCI4805
         private float height;
         public float Height { get { return height; } }
 
+        public User()
+        {
+            weight = 0;
+        }
         public User(string username, string emailAddress)
         {
             this.username = username;

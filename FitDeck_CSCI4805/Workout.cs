@@ -59,15 +59,15 @@ namespace FitDeck_CSCI4805
             int countFlexibility = 0;
             foreach(Exercise ex in exercises)
             {
-                if(ex.Type == "strength")
+                if(ex.Type == "Basic")
                 {
                     countStrength++;
                 }
-                if (ex.Type == "endurance")
+                if (ex.Type == "Cardio")
                 {
                     countEndurance++;
                 }
-                if (ex.Type == "balance")
+                if (ex.Type == "")
                 {
                     countBalance++;
                 }
