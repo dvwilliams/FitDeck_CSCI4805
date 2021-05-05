@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj": {}
+    "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\FitDeck.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj": {
+    "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\FitDeck.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj",
+        "projectUniqueName": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\FitDeck.Models.csproj",
         "projectName": "FitDeck.Models",
-        "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj",
+        "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\FitDeck.Models.csproj",
         "packagesPath": "C:\\Users\\shane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\obj\\",
+        "outputPath": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,15 +21,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,8 +40,14 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
