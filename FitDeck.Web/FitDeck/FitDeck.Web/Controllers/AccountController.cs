@@ -26,13 +26,11 @@ namespace FitDeck.Web.Controllers
             _tokenService = tokenService;
             _userManager = userManager;
             _signInManager = signInManager;
-            Console.WriteLine("AccountController?");
         }
 
         [HttpPost("register")]
         public async Task<ActionResult<ApplicationUser>> Register(ApplicationUserRegister applicationUserRegister)
         {
-            Console.WriteLine("Inside of Register");
             var applicationUserIdentity = new ApplicationUserIdentity()
             {
                 UserName = applicationUserRegister.UserName,

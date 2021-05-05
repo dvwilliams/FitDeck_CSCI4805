@@ -1,6 +1,8 @@
 using FitDeck.Identity;
 using FitDeck.Models.Account;
 using FitDeck.Repository.Account;
+using FitDeck.Repository.PreDetermined;
+using FitDeck.Repository.UserCreated;
 using FitDeck.Services;
 using FitDeck.Web.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -37,6 +39,8 @@ namespace FitDeck.Web
         {
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IPreDeterminedRepository, PreDeterminedRepository>();
+            services.AddScoped<IUserCreatedRepository, UserCreatedRepository>();
 
             services.AddIdentityCore<ApplicationUserIdentity>(options =>
             {
