@@ -2,27 +2,12 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-      "Microsoft.AspNet.Identity.Core/2.2.3": {
-=======
       "Dapper/2.0.78": {
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
         "type": "package",
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "compile": {
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        }
-      },
-      "FitDeck.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-=======
           "lib/netstandard2.0/Dapper.dll": {}
         },
         "runtime": {
@@ -678,7 +663,6 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
         "compile": {
           "bin/placeholder/FitDeck.Models.dll": {}
         },
@@ -689,10 +673,6 @@
     }
   },
   "libraries": {
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-    "Microsoft.AspNet.Identity.Core/2.2.3": {
-      "sha512": "Mv5FpoaxspE8hlWLE4r1IdZtovg/OyFgVRhxQbx47J4sqdLImN1hnM1lnwCj+/wLmqtqFk/RYMoZ5GAcwm/00g==",
-=======
     "Dapper/2.0.78": {
       "sha512": "vLPwL2HZXp/DN17Eu7sg6GMEj02alq7jcy6atn5Gv8i96b9Hu1UoxlCrhInUPfSFLQQiD8O7pdWAE1fdUEO/1Q==",
       "type": "package",
@@ -1805,16 +1785,21 @@
     },
     "System.Text.Encodings.Web/4.5.0": {
       "sha512": "Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
       "type": "package",
-      "path": "microsoft.aspnet.identity.core/2.2.3",
+      "path": "system.text.encodings.web/4.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
-        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
-        "microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
-        "microsoft.aspnet.identity.core.nuspec"
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.4.5.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "FitDeck.Models/1.0.0": {
@@ -1825,15 +1810,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-      "FitDeck.Models >= 1.0.0",
-      "Microsoft.AspNet.Identity.Core >= 2.2.3"
-=======
       "Dapper >= 2.0.78",
       "FitDeck.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "System.Data.SqlClient >= 4.8.2"
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
     ]
   },
   "packageFolders": {
@@ -1843,19 +1823,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-      "projectUniqueName": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Repository\\FitDeck.Repository.csproj",
-      "projectName": "FitDeck.Repository",
-      "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Repository\\FitDeck.Repository.csproj",
-      "packagesPath": "C:\\Users\\shane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Repository\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Repository\\FitDeck.Repository.csproj",
       "projectName": "FitDeck.Repository",
       "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Repository\\FitDeck.Repository.csproj",
       "packagesPath": "C:\\Users\\shane\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Repository\\obj\\",
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1875,13 +1847,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-            "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj": {
-              "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\GitHub\\FitDeck_CSCI4805\\FitDeck.Web\\FitDeck.Models\\FitDeck.Models.csproj"
-=======
             "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\FitDeck.Models.csproj": {
               "projectPath": "C:\\Users\\shane\\OneDrive\\Documents\\Personal_Files\\FitDeck.Web\\FitDeck\\FitDeck.Models\\FitDeck.Models.csproj"
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
             }
           }
         }
@@ -1896,11 +1863,6 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
-<<<<<<< HEAD:FitDeck.Web/FitDeck.Repository/obj/project.assets.json
-          "Microsoft.AspNet.Identity.Core": {
-            "target": "Package",
-            "version": "[2.2.3, )"
-=======
           "Dapper": {
             "target": "Package",
             "version": "[2.0.78, )"
@@ -1912,7 +1874,6 @@
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.2, )"
->>>>>>> 58d2bb43fdbb875300968035939d322e8971a31a:FitDeck.Web/FitDeck/FitDeck.Repository/obj/project.assets.json
           }
         },
         "imports": [
@@ -1933,17 +1894,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Identity.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
