@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using FitDeck_CSCI4805.Account;
+using FitDeck_CSCI4805.PreDetermined;
+using FitDeck_CSCI4805.WebApi;
 using Xamarin.Forms;
 
 namespace FitDeck_CSCI4805
@@ -11,6 +13,8 @@ namespace FitDeck_CSCI4805
         RestService restService;
         UserAccount user;
         PreselectedWorkout pw;
+        List<PreDeterminedWorkout> preDeterminedWorkouts = new List<PreDeterminedWorkout>();
+        ConnectApi connect = new ConnectApi();
         //need user to navigate between pages until databse is used
         public PredeterminedWorkoutPage(UserAccount user)
         {
@@ -19,6 +23,11 @@ namespace FitDeck_CSCI4805
             restService = new RestService();
             this.user = user;
             pw = new PreselectedWorkout();
+        }
+
+        async void populatePreDeterminedWorkouts()
+        {
+            preDeterminedWorkouts = await connect.GetPreDeterminedWorkoutsAsync();
         }
 
         //adds the workout to the user's workouts and returns to the profile screen

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using FitDeck_CSCI4805.Account;
+using FitDeck_CSCI4805.UserCreated;
+using FitDeck_CSCI4805.WebApi;
 using Xamarin.Forms;
 
 namespace FitDeck_CSCI4805
@@ -19,7 +21,8 @@ namespace FitDeck_CSCI4805
         Stopwatch stopwatch;
         DailyStats dailystats;
         WeeklyStats weeklyStats;
-
+        ConnectApi connect = new ConnectApi();
+        List<UserCreatedWorkout> userCreatedWorkouts = new List<UserCreatedWorkout>();
         //need user to navigate between pages until database is used
         //doesnt show user info anymore!!
         UserAccount user;
@@ -46,6 +49,13 @@ namespace FitDeck_CSCI4805
             lblHeight.Text = user.GetHeightString();
             lblWeight.Text = user.Weight.ToString();
 
+            populateUserWorkouts();
+
+        }
+
+        async void populateUserWorkouts()
+        {
+            userCreatedWorkouts = await connect.GetWorkoutByUserId(user.Token);
         }
 
         void logoutButton_Clicked(System.Object sender, System.EventArgs e)

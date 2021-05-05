@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using FitDeck_CSCI4805.Account;
+using FitDeck_CSCI4805.PreDetermined;
+using FitDeck_CSCI4805.UserCreated;
 using Newtonsoft.Json;
 
 namespace FitDeck_CSCI4805.WebApi
 {
     public class ConnectApi
     {
-        static HttpClient client = new HttpClient();
-        static string path = "";
+        HttpClient client = new HttpClient();
+        string path = "";
 
         public ConnectApi()
         {
@@ -60,6 +63,58 @@ namespace FitDeck_CSCI4805.WebApi
             return user;
         }
 
-        //public async Task<>
+        public async Task AddWorkoutAsync(UserCreatedWorkout workout, string token)
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            path = client.BaseAddress + "/UserCreated/addWorkout";
+
+            HttpResponseMessage response = await client.PostAsJsonAsync(path, workout);
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Succes");
+            }
+            else
+            {
+                Console.WriteLine("Error in response");
+            }
+        }
+
+        public async Task<List<UserCreatedWorkout>> GetWorkoutByUserId(string token)
+        {
+            List<UserCreatedWorkout> workouts = new List<UserCreatedWorkout>();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            path = client.BaseAddress + "/UserCreate/getAllWorkoutsByUserId";
+
+            HttpResponseMessage response = await client.GetAsync(path);
+
+            if (response.IsSuccessStatusCode)
+            {
+                workouts = await response.Content.ReadAsAsync<List<UserCreatedWorkout>>();
+            }
+            else
+            {
+                Console.WriteLine("Error: GetWorkoutByUserId response unsuccesful");
+            }
+            return workouts;
+        }
+
+        public async Task<List<PreDeterminedWorkout>> GetPreDeterminedWorkoutsAsync()
+        {
+            List<PreDeterminedWorkout> workouts = new List<PreDeterminedWorkout>();
+            path = client.BaseAddress + "/PreDetermined/getWorkouts";
+
+            HttpResponseMessage response = await client.GetAsync(path);
+
+            if(response.IsSuccessStatusCode)
+            {
+                workouts = await response.Content.ReadAsAsync<List<PreDeterminedWorkout>>();
+            }
+            else
+            {
+                Console.WriteLine("Error: GetPreDeterminedWorkout response is unsuccesful");
+            }
+
+            return workouts;
+        }
     }
 }
