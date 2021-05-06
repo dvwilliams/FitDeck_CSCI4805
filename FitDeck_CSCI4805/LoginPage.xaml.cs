@@ -23,12 +23,12 @@ namespace FitDeck_CSCI4805
         {
             if(usernameEntry == null || passwordEntry == null)
             {
-                DisplayAlert("Error:", "You must fill out all fields.", "OK");
+                await DisplayAlert("Error:", "You must fill out all fields.", "OK");
             }
             login.UserName = usernameEntry.Text;
             login.Password = passwordEntry.Text;
             _user = await connect.LoginAsync(login);
-            Navigation.PushAsync(new ProfileHomePage(_user));
+            await Navigation.PushAsync(new ProfileHomePage(_user));
         }
     }
 }

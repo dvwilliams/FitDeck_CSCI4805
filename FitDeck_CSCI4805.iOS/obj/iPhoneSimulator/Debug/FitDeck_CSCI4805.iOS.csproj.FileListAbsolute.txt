@@ -131,14 +131,14 @@
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/bin/iPhoneSimulator/Debug/FitDeck_CSCI4805.dll
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/bin/iPhoneSimulator/Debug/FitDeck_CSCI4805.pdb
-/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.4/actool/_PartialAppManifest.items
-/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.4/actool/_BundleResourceWithLogicalName.items
-/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.4/ibtool/_BundleResourceWithLogicalName.items
-/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.4/coremlc/_PartialAppManifest.items
-/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.4/coremlc/_BundleResourceWithLogicalName.items
-/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.4/optimized/
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/FitDeck_CSCI4805.iOS.csprojAssemblyReference.cache
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/FitDeck_CSCI4805.iOS.csproj.CoreCompileInputs.cache
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/FitDeck_CSCI4805.iOS.csproj.CopyComplete
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/FitDeck_CSCI4805.iOS.exe
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/FitDeck_CSCI4805.iOS.pdb
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12 mini-14.4/actool/_PartialAppManifest.items
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12 mini-14.4/actool/_BundleResourceWithLogicalName.items
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12 mini-14.4/ibtool/_BundleResourceWithLogicalName.items
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12 mini-14.4/coremlc/_PartialAppManifest.items
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12 mini-14.4/coremlc/_BundleResourceWithLogicalName.items
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 12 mini-14.4/optimized/

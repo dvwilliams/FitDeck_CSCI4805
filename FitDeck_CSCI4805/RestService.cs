@@ -159,7 +159,7 @@ namespace FitDeck_CSCI4805
             
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            string url = $"http://204.235.60.194/exrxapi/v1/allinclusive/exercises?exerciseids=[1,1]";
+            string url = $"/exrxapi/v1/allinclusive/exercises?exerciseids=[{ID}]";
 
             string response = await client.GetStringAsync(url);
 

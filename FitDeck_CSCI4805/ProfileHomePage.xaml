@@ -6,7 +6,7 @@
     x:Class="FitDeck_CSCI4805.ProfileHomePage">
     <ScrollView BackgroundColor="CornflowerBlue">
         <AbsoluteLayout >
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout>
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -50,18 +50,12 @@
 
             </Frame>
             <!--View Daily and Weekly Stats-->
-            <StackLayout x:Name="statsLayout" BindingContext="{Binding WeeklyStats}" Grid.Row="2" Grid.ColumnSpan="3" >
-                <chart:SfChart>
-                <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis/>
-                </chart:SfChart.PrimaryAxis>
-                    <chart:SfChart.SecondaryAxis>
-                        <chart:NumericalAxis/>
-                    </chart:SfChart.SecondaryAxis>
-                    <chart:ColumnSeries x:Name="dailyStatsCharts" XBindingPath="Day" YBindingPath="CaloriesBurned"/>
-                    </chart:SfChart>
+            <StackLayout x:Name="statsLayout" Grid.Row="2" Grid.ColumnSpan="3" >
+                <Button x:Name="graphButton" Text="graph button" TextColor="White" Clicked="graphButton_Clicked" />
                 <Label Text="Daily Stats:" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                <Label x:Name="dStats" TextColor="White" FontSize="25" FontAttributes="Bold"/>
                 <Label Text="Weekly Stats:" TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                <Label x:Name="wStats" TextColor="White" FontSize="25" FontAttributes="Bold"/>
             </StackLayout>
             <!--View Workouts List-->
             <Button x:Name="addWorkoutButton" Text="Add Workout" TextColor="CornflowerBlue" BorderColor="CornflowerBlue" BorderWidth="2" BackgroundColor="White" Grid.Row="3" Grid.Column="0" Clicked="addWorkoutButton_Clicked"></Button>
@@ -72,7 +66,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <Label Text="{Binding workouts}"/>
+                            <Label Text="{Binding Name}" TextColor="CornflowerBlue"/>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -155,7 +149,7 @@
                             <Button x:Name="deleteWorkoutButton" Grid.Row="1" Grid.Column="1" Text="Delete Workout" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="deleteWorkoutButton_Clicked"/>
 
                             
-                            <Button x:Name="finishEditingWorkoutButton" Text="Finish Editing Workout" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="finishEditingWorkoutButton_Clicked"/>
+                            <Button x:Name="finishEditingWorkoutButton" Grid.Row="2" Text="Finish Editing Workout" TextColor="CornflowerBlue" BackgroundColor="CornflowerBlue" Clicked="finishEditingWorkoutButton_Clicked"/>
 
                         </Grid>
                     </StackLayout>
@@ -291,7 +285,7 @@
                 <ContentView x:Name="popupStartWorkoutView" BackgroundColor="White" Padding="30, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                                     <Picker x:Name="workoutToStartPicker" Title="Select a workout to start"/>
-                                    <Label x:Name="stopwatchLabel" TextColor="CornflowerBlue"/>
+                                    <Label x:Name="stopwatchLabel" TextColor="CornflowerBlue" HeightRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                                     <Button x:Name="startButton" Text="Start Timer" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="startButton_Clicked"/>
                                     <Button x:Name="pauseButton" Text="Pause Timer" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="pauseButton_Clicked"/>
                                     <Button x:Name="stopButton" Text="Stop Timer and End Workout" TextColor="White" BackgroundColor="CornflowerBlue" Clicked="stopButton_Clicked"/>
@@ -329,7 +323,7 @@
                                         </ListView>
                                     </StackLayout>
                             </ContentView>
-            </StackLayout>
+           </StackLayout>
         </AbsoluteLayout>
     </ScrollView>
 </ContentPage>

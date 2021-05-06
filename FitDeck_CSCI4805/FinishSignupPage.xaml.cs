@@ -54,21 +54,15 @@ namespace FitDeck_CSCI4805
                     //place holder
                     float weight = float.Parse(weightEntry.Text);
                     UserSignup signup = new UserSignup(username, password, emailaddress, nameEntry.Text, age, height, weight);
-                    await DisplayAlert("Success:", "This actually works", "OK");
-                    Console.WriteLine("Hello");
+                    
                     user = await connect.SignupAsync(signup);
                     if(user.Token != null)
                     {
                        await DisplayAlert("success:", user.FullName, "OK");
                     }
                     
-                    //Math.Round(height, 2);
-                    //User user = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
+                    //User user1 = new User(username, emailaddress, nameEntry.Text, dOB, Int32.Parse(weightEntry.Text), height);
 
-                    //Created to test whether the data was being stored or not
-                    //ObservableCollection<string> data = new ObservableCollection<string>();
-                    //data.Add(user.ToString());
-                    //userView.ItemsSource = data;
 
                     //navigates to the next page in the app
                     //paramater of user needed to test without the database

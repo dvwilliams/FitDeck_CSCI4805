@@ -15,6 +15,7 @@ namespace FitDeck_CSCI4805
         PreselectedWorkout pw;
         List<PreDeterminedWorkout> preDeterminedWorkouts = new List<PreDeterminedWorkout>();
         ConnectApi connect = new ConnectApi();
+        Workouts workouts;
         //need user to navigate between pages until databse is used
         public PredeterminedWorkoutPage(UserAccount user)
         {
@@ -23,6 +24,7 @@ namespace FitDeck_CSCI4805
             restService = new RestService();
             this.user = user;
             pw = new PreselectedWorkout();
+            workouts = new Workouts();
         }
 
         async void populatePreDeterminedWorkouts()
@@ -106,7 +108,8 @@ namespace FitDeck_CSCI4805
                     workout.Name = selectWorkoutPicker.SelectedItem.ToString();
                 }
                 popupDayView.IsVisible = false;
-                Navigation.PushAsync(new ProfileHomePage(user));
+                workouts.addWorkout(workout);
+                Navigation.PushAsync(new ProfileHomePage(user, workouts));
             }
 
 
@@ -129,15 +132,17 @@ namespace FitDeck_CSCI4805
 
                 foreach (Exercise ex in exers)
                 {
-                    count++;
-                    if (exers.Count == count)
-                    {
+
+                    ids.Add(ex.ID);
+                }
+
+                string ID = string.Join(", ", ids);
                         var token = await restService.AuthenticateUserAsync();
 
                         //heres the issue. I've called it with a list of strings, a list of ints, an array
                         //of strings, an array of ints, and single strings and ints. it only works with id:1
                         //rigt now it just has a string in it so it doesnt throw an error when i test other code 
-                        var content = await RestService.getExerciseById(ex.Name, token.token);
+                        var content = await RestService.getExerciseById(ID, token.token);
 
                         if (content != null)
                         {
@@ -148,9 +153,9 @@ namespace FitDeck_CSCI4805
                             await DisplayAlert("Error", "Something went wrong", "OK");
                         }
 
-                    }
+                    
 
-                }
+                
 
             }
         }

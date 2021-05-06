@@ -37,3 +37,4 @@
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/bin/Debug/netstandard2.0/ref/FitDeck_CSCI4805.dll
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/bin/Debug/netstandard2.0/FitDeck_CSCI4805.pdb
 /Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/daphnewilliams/Projects/FitDeck_CSCI4805/FitDeck_CSCI4805/obj/Debug/netstandard2.0/GraphPage.xaml.g.cs

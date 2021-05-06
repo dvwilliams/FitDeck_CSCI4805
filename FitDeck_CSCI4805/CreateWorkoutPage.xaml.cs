@@ -20,14 +20,16 @@ namespace FitDeck_CSCI4805
         Workout workout;
         List<string> workoutNames;
         UserAccount _user;
+        Workouts workouts;
 
         //need user to navigate between pages until databse is used
         public CreateWorkoutPage(UserAccount _user)
         {
-            InitializeComponent();
+            InitializeComponent();   
             restService = new RestService();
             exercises = new List<Exercise>();
             workout = new Workout();
+            workouts = new Workouts();
             this._user = _user;
         }
 
@@ -75,7 +77,7 @@ namespace FitDeck_CSCI4805
                 else if (muscleGroupPicker.SelectedItem.ToString() == "Chest")
                 {
                     specificGroup.Add("General Chest");
-                    specificGroup.Add("Pectoralis Major, Sternal");
+                    specificGroup.Add("Pectoralis Major");
                     specificGroup.Add("Pectoralis Minor");
                     specificGroup.Add("Serratus Anterior");
                     concentratedMuscleGroupPicker.ItemsSource = specificGroup;
@@ -117,7 +119,7 @@ namespace FitDeck_CSCI4805
                 }
                 else //calves
                 {
-                    specificGroup.Add("General Calves");
+                    specificGroup.Add("General Calf");
                     specificGroup.Add("Gastrocnemius");
                     specificGroup.Add("Soleus");
                     specificGroup.Add("Tibialis Anterior");
@@ -153,9 +155,6 @@ namespace FitDeck_CSCI4805
                 type.Add("Vertical");
                 type.Add("Horizontal");
                 type.Add("Lateral");
-                type.Add("Truck Extension");
-                type.Add("Trunk Flexion");
-                type.Add("Trunk Rotation");
                 type.Add("Pulldown");
                 type.Add("Forward Push");
                 type.Add("Upward Push");
@@ -188,11 +187,11 @@ namespace FitDeck_CSCI4805
             }
             else
             {
-                intensityPicker.IsVisible = true;
+                intensityPicker.IsVisible = false;
                 specificTypePicker.Title = "Cardio Category";
 
                 type.Add("Calisthenic");
-                type.Add("Machine");
+                type.Add("Machines");
                 type.Add("Jump Rope");
                 type.Add("Circuit Drill");
 
@@ -251,7 +250,6 @@ namespace FitDeck_CSCI4805
                         foreach (Exercis ex in content.exercises)
                         {
                             count++;
-                            workoutNames.Add(ex.Exercise_Name);
 
                         }
                         if (content.exercises.Count == count)
@@ -277,7 +275,6 @@ namespace FitDeck_CSCI4805
                         foreach (Exercis ex in content.exercises)
                         {
                             count++;
-                            workoutNames.Add(ex.Exercise_Name);
                             
                         }
                         if (content.exercises.Count == count)
@@ -292,9 +289,9 @@ namespace FitDeck_CSCI4805
 
                     }
                 }
-                else if (exerciseTypePicker.SelectedItem.ToString() == "Cardio and Conditioning")
+                else if (exerciseTypePicker.SelectedItem.ToString() == "Cardio")
                 {
-                    var content = await RestService.cardioExercises((string)exerciseTypePicker.SelectedItem, token.token);
+                    var content = await RestService.cardioExercises((string)specificTypePicker.SelectedItem, token.token);
                     workoutNames = new List<string>();
 
                     int count = 0;
@@ -303,7 +300,6 @@ namespace FitDeck_CSCI4805
                         foreach (Exercis ex in content.exercises)
                         {
                             count++;
-                            workoutNames.Add(ex.Exercise_Name);
 
                         }
                         if (content.exercises.Count == count)
@@ -347,7 +343,14 @@ namespace FitDeck_CSCI4805
                 exercises.Add(exer);
                 
                 workout.addExercise(exer);
-                viewWorkout.ItemsSource = workout.Exercises;
+                
+                //viewWorkout.ItemsSource = exes.;
+                foreach(Exercise ex in workout.Exercises)
+                {
+                    workoutNames.Add(ex.Name);
+                }
+                ObservableCollection<Exercise> o = new ObservableCollection<Exercise>(workout.Exercises);
+                viewWorkout.ItemsSource = o;
 
                 
             }
@@ -424,7 +427,8 @@ namespace FitDeck_CSCI4805
                     workout.Day = anyday.ToString();
                 }
                 workout.Name = workoutNameEntry.Text;
-                Navigation.PushAsync(new ProfileHomePage(_user));
+                workouts.addWorkout(workout);
+                Navigation.PushAsync(new ProfileHomePage(_user, workouts));
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using FitDeck_CSCI4805.Account;
 using FitDeck_CSCI4805.UserCreated;
@@ -39,7 +40,36 @@ namespace FitDeck_CSCI4805
 
             DailyStats dailystat = new DailyStats((float)1.20, 45, DayOfWeek.Monday);
             weeklyStats.addDailyStat(dailystat);
-            dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
+            //dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
+
+            this.user = user;
+            lblName.Text = user.FullName;
+            lblUsername.Text = user.UserName;
+            lblEmail.Text = user.Email;
+            lblAge.Text = user.Age.ToString();
+            lblHeight.Text = user.GetHeightString();
+            lblWeight.Text = user.Weight.ToString();
+
+            populateUserWorkouts();
+
+        }
+        public ProfileHomePage(UserAccount user, Workouts workouts)
+        {
+            InitializeComponent();
+
+            restService = new RestService();
+            exercises = new List<Exercise>();
+            workout = new Workout();
+            this.workouts = workouts;
+            stopwatch = new Stopwatch();
+            dailystats = new DailyStats();
+            weeklyStats = new WeeklyStats();
+
+            ObservableCollection<Workout> wo = new ObservableCollection<Workout>(workouts._Workouts);
+            workoutsListView.ItemsSource = wo;
+                DailyStats dailystat = new DailyStats((float)1.20, 45, DayOfWeek.Monday);
+            weeklyStats.addDailyStat(dailystat);
+            //dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
 
             this.user = user;
             lblName.Text = user.FullName;
@@ -99,7 +129,8 @@ namespace FitDeck_CSCI4805
             {
                 popupEditWorkoutsView.IsVisible = true;
                 //needs to call database to retrieve the list of workout exercises
-                listOfWorkoutsPicker.ItemsSource = workouts._Workouts;
+                ObservableCollection<Workout> wo = new ObservableCollection<Workout>(workouts._Workouts);
+                listOfWorkoutsPicker.ItemsSource = wo;
             }
             
         }
@@ -186,7 +217,9 @@ namespace FitDeck_CSCI4805
                     }
                     else
                     {
-                        workoutsListView.ItemsSource = workouts._Workouts;
+
+                        ObservableCollection<Workout> wo = new ObservableCollection<Workout>(workouts._Workouts);
+                        workoutsListView.ItemsSource = wo;
                     }
                 }
 
@@ -540,7 +573,8 @@ namespace FitDeck_CSCI4805
             }
             if (workout != null)
             {
-                viewWorkout.ItemsSource = workout.ToString();
+                ObservableCollection<Exercise> wo = new ObservableCollection<Exercise>(workout.Exercises);
+                viewWorkout.ItemsSource = wo;
             }
         }
 
@@ -558,7 +592,9 @@ namespace FitDeck_CSCI4805
                 exercises.Add(exer);
 
                 workout.addExercise(exer);
-                viewWorkout.ItemsSource = workout.Exercises;
+
+                ObservableCollection<Exercise> wo = new ObservableCollection<Exercise>(workout.Exercises);
+                viewWorkout.ItemsSource = wo;
 
 
             }
@@ -568,10 +604,12 @@ namespace FitDeck_CSCI4805
         void startWorkoutButton_Clicked(System.Object sender, System.EventArgs e)
         {
             //need to grab itemssource from db
-            workoutToStartPicker.ItemsSource = workouts._Workouts;
+            ObservableCollection<Workout> wo = new ObservableCollection<Workout>(workouts._Workouts);
+           
+            workoutToStartPicker.ItemsSource = wo;
             
             
-                popupStartWorkoutView.IsVisible = true;
+               popupStartWorkoutView.IsVisible = true;
             
         }
 
@@ -614,7 +652,7 @@ namespace FitDeck_CSCI4805
             //tester for chart. doesnt work for now
             DailyStats dailystat = new DailyStats((float)1.20, 45, DayOfWeek.Monday);
             weeklyStats.addDailyStat(dailystat);
-            dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
+            //dailyStatsCharts.ItemsSource = weeklyStats._DailyStats;
 
             stopwatchLabel.Text = "You spent " + dailystat.convertTimeSpent() + " minutes working out and burned " + dailystat.CaloriesBurned + " calories.";
         }
@@ -623,6 +661,11 @@ namespace FitDeck_CSCI4805
         {
             startButton.Text = "Resume";
             stopwatch.Stop();
+        }
+
+        void graphButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new GraphPage());
         }
     }
 }
